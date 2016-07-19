@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="HTML," />
 
 
 
@@ -84,15 +84,34 @@
 
 
 
-<meta name="description" content="Full of passion for life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cshine">
-<meta property="og:url" content="http://Cccshine.github.io/index.html">
+<meta name="description" content="内联元素(inline)
+和其他元素都在一行上；
+元素的高度、宽度及顶部和底部边距不可设置；可以设置垂直方向的padding和margin值，但是inline元素的margin和padding的垂直方向上不产生边距效果，即不影响布局；
+元素的宽度就是它包含的文字或图片的宽度，不可改变；
+代码换行被解析：换行写代码会被解析为一个空格，空格是字体大小的一半。
+
+内联块状元素(inline-block)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML元素分类">
+<meta property="og:url" content="http://Cccshine.github.io/2016/07/18/HTML元素分类/index.html">
 <meta property="og:site_name" content="Cshine">
-<meta property="og:description" content="Full of passion for life">
+<meta property="og:description" content="内联元素(inline)
+和其他元素都在一行上；
+元素的高度、宽度及顶部和底部边距不可设置；可以设置垂直方向的padding和margin值，但是inline元素的margin和padding的垂直方向上不产生边距效果，即不影响布局；
+元素的宽度就是它包含的文字或图片的宽度，不可改变；
+代码换行被解析：换行写代码会被解析为一个空格，空格是字体大小的一半。
+
+内联块状元素(inline-block)">
+<meta property="og:updated_time" content="2016-07-18T14:16:21.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cshine">
-<meta name="twitter:description" content="Full of passion for life">
+<meta name="twitter:title" content="HTML元素分类">
+<meta name="twitter:description" content="内联元素(inline)
+和其他元素都在一行上；
+元素的高度、宽度及顶部和底部边距不可设置；可以设置垂直方向的padding和margin值，但是inline元素的margin和padding的垂直方向上不产生边距效果，即不影响布局；
+元素的宽度就是它包含的文字或图片的宽度，不可改变；
+代码换行被解析：换行写代码会被解析为一个空格，空格是字体大小的一半。
+
+内联块状元素(inline-block)">
 
 
 
@@ -113,9 +132,9 @@
 
 
 
-  <link rel="canonical" href="http://Cccshine.github.io/"/>
+  <link rel="canonical" href="http://Cccshine.github.io/2016/07/18/HTML元素分类/"/>
 
-  <title> Cshine </title>
+  <title> HTML元素分类 | Cshine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -225,9 +242,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -247,225 +264,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/07/19/CSS的居中/" itemprop="url">
-                  CSS的居中
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-19T00:02:31+08:00" content="2016-07-19">
-              2016-07-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
-<li><strong> 块中的文字或图片水平居中 </strong>：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的一层div来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）<br>块状元素自身水平居中（定宽）：margin: 0 auto  ，但是不能作用于浮动元素<br>块状元素自身水平居中（不定宽）：<br>（没有明确设定宽度的block元素，根据块级元素的性质，它默认是独占一行的，所以这个时候block元素本身就是浏览器窗口的宽度或者父级元素的宽度，就不必要来设置水平居中了。）<br>加入table标签：为需要居中的元素的外面加上<table><tbody><tr><td>标签，并设置table 的margin为 margin:0 auto;<br>若是此时对块中的内联内容进行居中的话，则可以采用text-align<br>若是此时对块中的块状内容进行居中的话，则可以采用margin（定宽），也可以采用display:inline后用text-align（不定宽）<br>浮动配合相对定位来进行浮动元素水平居中（不需要知道宽度）：<br>通过给父元素设置 float left，然后给父元素设置 position:relative 和 left:50%，  子元素设置 position:relative 和 left:-50% 来实现水平居中；为了避免父元素设置position: relative带来一些负作用，可以在要居中的元素外面再加上一层父元素专门用来设置而不影响原来的父元素</td></tr></tbody></table></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/几种布局比较/" itemprop="url">
-                  几种布局比较
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:23:05+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><strong> 流体布局（liquid layout） </strong>：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式</li>
-<li><strong> 冻结布局（frozen layout） </strong>：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度</li>
-<li><p><strong> 凝胶布局(jello layout) </strong>:内容的宽度是固定的，但是外边距会随着浏览器窗口扩展或收缩(设置为auto)通常会把内容放在中央，会美观一些，其他与冻结布局类似</p>
-</li>
-<li><p><strong>层模式布局 </strong>：利用position属性的四个值定位 static，absolute，fixed，relative；</p>
-<ol>
-<li>static：   默认方式，元素放在页面的正常流中</li>
-<li>absolute：一个元素变成了绝对定位元素，这个元素就完全脱离正常文档流了，绝对定位元素的前面或者后面的元素会认为这个元素并不存在，即这个元素浮于其他元素上面，它是独立出来的。<ul>
-<li>可以将元素放在页面的任何位置，默认是相对于页面边界来放置，若是嵌套在另一个定位元素内，则是相对于这个外包含元素定位。（绝对元素的宽度不是必须要设定的）   。    </li>
-<li>会使内联元素支持宽高，块元素内容撑开宽度.   </li>
-</ul>
-</li>
-<li>fixed：相对于视窗定位，页面滚动时不会移动 ，其他内容在这些固定元素下面正常滚动。<ul>
-<li>会使内联元素支持宽高，块元素内容撑开宽度。IE6不支持</li>
-</ul>
-</li>
-<li>relative: 元素首先正常流入页面，然后按指定的量偏移，是相对于正常流中该元素位置定位 ，而且偏移前的位置保留不动 。不会影响元素本身的特性，如果没有定位偏移量，对元素没有任何影响。</li>
-<li>无论是相对、绝对还是固定定位，当偏移量超出上面、左边浏览器窗体（或者说超出可视区域）的时候，超出的内容都会被隐藏；而超出下面和右边的时候，相对定位和固定定位会隐藏超出的部分内容，而绝对定位会出现滚动 条。 </li>
-<li>可以使用z-index属性分层放置，z-index越大，说明层次越高，当然它是可以设置负值的。 默认层次，后者高于前者.Z-index 仅能在定位元素上奏效</li>
-<li>相对定位与绝对定位的结合使用：Relative与Absolute组合使用,可以实现一个元素相对于其他元素进行定位，而不是相对于浏览器<br>需要定位的元素的父级元素设置为相对定位，自己本身设置为绝对定位即可</li>
-</ol>
-</li>
-<li><strong> 浮动布局 </strong>：浮动元素会从正常流中取出，浮动到左边或者右边，与绝对定位不同的内联元素会考虑浮动元素的边界，围绕着这个浮动元素 。浮动无法创建两个等高的列。</li>
-<li><strong>表格布局 </strong>：CSS display:table 使用一种类似表格的布局来表现结构中的内容，为页面增加的结构完全是为了支持这种布局，并没有为页面增加任何有含义的内容。经常用来实现多栏均匀布局。利用这种布局很容易实现完美对齐且等高的列，而且可以随着浏览器扩展和收缩。与HTML表格不同，HTML表格的、是建立数据的结构.   （在IE8以前不支持）</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/HTML元素分类/" itemprop="url">
-                  HTML元素分类
-                </a>
+                HTML元素分类
               
             
           </h1>
@@ -505,9 +304,7 @@
       
 
       
-        
-          
-            <h4 id="内联元素-inline"><a href="#内联元素-inline" class="headerlink" title="内联元素(inline)"></a>内联元素(inline)</h4><ul>
+        <h4 id="内联元素-inline"><a href="#内联元素-inline" class="headerlink" title="内联元素(inline)"></a>内联元素(inline)</h4><ul>
 <li>和其他元素都在一行上；</li>
 <li>元素的高度、宽度及顶部和底部边距不可设置；可以设置垂直方向的padding和margin值，但是inline元素的margin和padding的垂直方向上不产生边距效果，即不影响布局；</li>
 <li>元素的宽度就是它包含的文字或图片的宽度，不可改变；</li>
@@ -559,138 +356,63 @@
 <li><strong> 使用浮动 </strong></li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T15:19:50+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/HTML/" rel="tag">#HTML</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/18/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/18/几种布局比较/" rel="prev" title="几种布局比较">
+                几种布局比较 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -698,6 +420,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -717,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/icon.jpg"
@@ -761,6 +496,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#内联元素-inline"><span class="nav-number">1.</span> <span class="nav-text">内联元素(inline)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联块状元素-inline-block"><span class="nav-number">2.</span> <span class="nav-text">内联块状元素(inline-block)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块状元素-block"><span class="nav-number">3.</span> <span class="nav-text">块状元素(block)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题：行内元素是否可以设置宽高？"><span class="nav-number">4.</span> <span class="nav-text">问题：行内元素是否可以设置宽高？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去除inline-block元素间间距的N种方法"><span class="nav-number">5.</span> <span class="nav-text">去除inline-block元素间间距的N种方法</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -857,6 +603,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
