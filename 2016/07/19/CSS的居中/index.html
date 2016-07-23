@@ -85,18 +85,24 @@
 
 
 <meta name="description" content="水平居中
- 块中的文字或图片水平居中 ：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的一层div来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）块状元素自身水平居中（定宽）：margin">
+ 块中的文字或图片水平居中 ：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的块状父元素来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）
+
+ 块状元素自身水平居中（定宽）：mar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS的居中">
 <meta property="og:url" content="http://Cccshine.github.io/2016/07/19/CSS的居中/index.html">
 <meta property="og:site_name" content="Cshine">
 <meta property="og:description" content="水平居中
- 块中的文字或图片水平居中 ：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的一层div来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）块状元素自身水平居中（定宽）：margin">
-<meta property="og:updated_time" content="2016-07-18T16:10:09.125Z">
+ 块中的文字或图片水平居中 ：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的块状父元素来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）
+
+ 块状元素自身水平居中（定宽）：mar">
+<meta property="og:updated_time" content="2016-07-23T04:49:04.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS的居中">
 <meta name="twitter:description" content="水平居中
- 块中的文字或图片水平居中 ：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的一层div来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）块状元素自身水平居中（定宽）：margin">
+ 块中的文字或图片水平居中 ：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的块状父元素来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）
+
+ 块状元素自身水平居中（定宽）：mar">
 
 
 
@@ -290,7 +296,53 @@
 
       
         <h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
-<li><strong> 块中的文字或图片水平居中 </strong>：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的一层div来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）<br>块状元素自身水平居中（定宽）：margin: 0 auto  ，但是不能作用于浮动元素<br>块状元素自身水平居中（不定宽）：<br>（没有明确设定宽度的block元素，根据块级元素的性质，它默认是独占一行的，所以这个时候block元素本身就是浏览器窗口的宽度或者父级元素的宽度，就不必要来设置水平居中了。）<br>加入table标签：为需要居中的元素的外面加上<table><tbody><tr><td>标签，并设置table 的margin为 margin:0 auto;<br>若是此时对块中的内联内容进行居中的话，则可以采用text-align<br>若是此时对块中的块状内容进行居中的话，则可以采用margin（定宽），也可以采用display:inline后用text-align（不定宽）<br>浮动配合相对定位来进行浮动元素水平居中（不需要知道宽度）：<br>通过给父元素设置 float left，然后给父元素设置 position:relative 和 left:50%，  子元素设置 position:relative 和 left:-50% 来实现水平居中；为了避免父元素设置position: relative带来一些负作用，可以在要居中的元素外面再加上一层父元素专门用来设置而不影响原来的父元素</td></tr></tbody></table></li>
+<li><p><strong> 块中的文字或图片水平居中 </strong>：<br>text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的块状父元素来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）</p>
+</li>
+<li><p><strong> 块状元素自身水平居中（定宽）</strong>：margin: 0 auto  ，但是不能作用于浮动元素</p>
+</li>
+<li><p><strong> 块状元素自身水平居中（不定宽）</strong>：</p>
+<ul>
+<li>没有明确设定宽度的block元素，根据块级元素的性质，它默认是独占一行的，所以这个时候block元素本身就是浏览器窗口的宽度或者父级元素的宽度，就不必要来设置水平居中了。</li>
+<li>若是此时对块中的内联内容进行居中的话，则可以采用text-align</li>
+<li>若是此时对块中的块状内容进行居中的话，则可以采用margin（定宽），也可以采用display:inline后用text-align（不定宽）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong> 浮动配合相对定位来进行浮动元素水平居中（不需要知道宽度） </strong>：<br>通过给父元素设置 float left，然后给父元素设置 position:relative 和 left:50%，子元素设置 position:relative 和 left:-50% 来实现水平居中；为了避免父元素设置position:relative带来一些负作用，需要在要居中的元素外面再加上一层父元素专门用来设置而不影响原来的父元素</p>
+</li>
+<li><p><strong> 使用绝对定位（必须知道宽度） </strong>：<br>绝对定位进行居中的原理是通过把这个绝对定位元素的left或right属性设为50%,这个时候元素并不是居中的，而是比居中的位置向右或向左偏了这个元素宽度的一半的距离，所以需要使用一个负的margin-left或margin-right的值来把它拉回到居中的位置，这个负的margin值就取元素宽度的一半。</p>
+</li>
+<li><p><strong>text-align结合绝对定位及负margin值实现水平居中（需要知道宽度） </strong>：</p>
+<ul>
+<li>没有应用left、top等属性值的absolute元素就是个不占据空间的普通元素，如果是block水平的，换行显示；如果是inline水平的，跟在前面的文字后面显示。</li>
+<li>text-align属性作用于文字等inline(或inline-block)元素</li>
+<li>结合以上两点，可在absolute元素的标签前面加上&nbsp;，absolute元素的父元素设置text-align:center.此时absolute元素沿着父元素的中线显示（实际上由于&nbsp;会占据像素值，所以是偏中线3~4px),再利用margin-left: - (“1/2个元素宽度” + 2)即可实现</li>
+<li>这是一种方法，但是很少用到</li>
+</ul>
+</li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
+<li><p><strong> 父元素高度确定的单行文本/图片 </strong>：<br>通过设置父元素的 height 和 line-height 高度一致来实现的。最好使用相对单位（em/%)定义你的 height 和 line-height，这样当字体大小变化时，height能相应变化不想毁了你的布局的话，overflow: hidden 一定要加上，否则文字溢出将会破坏其他布局（IE中不支持img的垂直居中）</p>
+</li>
+<li><p><strong> 块级元素中的多行文字图片垂直居中（不定高） </strong>：<br>通过设置上下内边距padding相等<br>同时支持块级元素和内联元素，支持所有浏览器</p>
+</li>
+<li><p><strong> 使用绝对定位（必须知道高度） </strong>：<br>绝对定位进行居中的原理是通过把这个绝对定位元素的top或bottom属性设为50%,这个时候元素并不是居中的，而是比居中的位置向下或向上偏了这个元素高度的一半的距离，所以需要使用一个负的margin-top或margin-bottom的值来把它拉回到居中的位置，这个负的margin值就取元素高度的一半。</p>
+</li>
+<li><p><strong> 加入table标签实现垂直居中 </strong>：<br>为需要居中的元素的外面加上<code>&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;</code>标签，td标签默认情况下就默认设置了vertical-align 为 middle，所以可以不需要显式地设置。</p>
+</li>
+<li><p><strong> 使用display: table-cell </strong><br>将父元素以表格形式渲染，即可激活vertical-align属性<br>和一个合法的<code>&lt;td&gt;</code>元素必须在<code>&lt;table&gt;</code>里一样，display: table-cell 元素必须作为 display: table 的元素的子孙出现,IE不支持</p>
+</li>
+</ul>
+<h3 id="其他居中"><a href="#其他居中" class="headerlink" title="其他居中"></a>其他居中</h3><ul>
+<li><strong> 实现水平垂直居中 </strong>：<ul>
+<li>使用绝对定位（必须知道高度和宽度），利用上面提到的两者结合即可</li>
+<li>另一种使用绝对定位的方式（必须知道高度和宽度）： height: 100px; width: 100px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin:auto;但是此方法只只支持IE9+,谷歌，火狐等符合w3c标准的现代浏览器。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong> 宽高未知的img水平垂直居中 </strong>：<br>为父级加<code>text-align: center</code>以水平居中，img加<code>vertical-align: middle</code> 后，还要对其他内联元素也加vertical-align才能垂直居中，如果没有其他内联元素，可以添加高度为100%的空span元素，并display: inline-block.</li>
 </ul>
 
       
@@ -330,6 +382,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/23/meta标签详解/" rel="prev" title="meta标签详解">
+                meta标签详解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -397,7 +453,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -436,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.</span> <span class="nav-text">水平居中</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">2.</span> <span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他居中"><span class="nav-number">3.</span> <span class="nav-text">其他居中</span></a></li></ol></div>
             
           </div>
         </section>

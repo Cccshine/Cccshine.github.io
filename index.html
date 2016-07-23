@@ -248,6 +248,184 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/23/meta标签详解/" itemprop="url">
+                  meta标签详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-23T10:42:44+08:00" content="2016-07-23">
+              2016-07-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>The <code>&lt;meta&gt;</code> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.<br>关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。<br>meta标签常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。 </p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ol>
+<li><p>name属性<br>name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。<code>&lt;meta name=&quot;参数&quot;content=&quot;具体的描述&quot;&gt;</code></p>
+<p> name属性共有以下几种参数：</p>
+<ul>
+<li><p><strong> keywords(关键字) </strong>:用于告诉搜索引擎，你网页的关键字。</p>
+</li>
+<li><p><strong> description(网站内容的描述) </strong>: 用于告诉搜索引擎，你网站的主要内容。</p>
+</li>
+<li><p><strong> viewport(移动端的窗口) </strong>: 用于指定在移动设备上页面的布局视口如何设置</p>
+</li>
+<li><p><strong> robots(定义搜索引擎爬虫的索引方式) </strong>:用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。 具体参数含义如下：</p>
+<ol>
+<li>all : 搜索引擎将索引此网页与继续通过此网页的链接索引，等价于index，follow。</li>
+<li>none : 搜索引擎将忽略此网页，等价于noindex，nofollow。</li>
+<li>index : 搜索引擎索引此网页。</li>
+<li>noindex : 搜索引擎不索引此网页。</li>
+<li>follow : 搜索引擎继续通过此网页的链接索引搜索其它的网页。</li>
+<li>nofollow: 搜索引擎不继续通过此网页的链接索引搜索其它的网页。</li>
+</ol>
+</li>
+<li><p><strong> author(作者) </strong>:用于标注网页作者</p>
+</li>
+<li><p><strong> generator </strong>:用以说明生成工具，可以废弃</p>
+</li>
+<li><p><strong> copyright(版权) </strong>:用于标注版权信息</p>
+</li>
+<li><p><strong> revisit-after(搜索引擎爬虫重访时间) </strong>:如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问</p>
+</li>
+<li><p><strong> renderer(双核浏览器渲染方式) </strong>:renderer是为双核浏览器准备的，用于指定双核浏览器默认以何种方式渲染页面。</p>
+</li>
+<li><p>在过去，搜索引擎是靠meta标签，如标题（title）、描述（description）甚至关键字（keywords）来索引网页页面的。某些网站已经开始滥用它们了，在页面中塞满众多著名的关键词，目的在于获得一个更好的搜索结果。Google在2009年就宣布在搜索算法中不再使用元关键词或者描述来得出排名（Ranking）了。但是百度中文搜索引擎算法则是考虑关键词标签作为算法的一个重要因素。</p>
+</li>
+<li><p>一个人在点击你的链接之前是会在搜索结果中先看到页面的描述，这个也说明，应该添加上meta描述，方便用户去阅读而不仅仅是为了方便网络机器人去查找。</p>
+</li>
+</ul>
+</li>
+<li><p>http-equiv属性<br>http-equiv属性可用于模拟一个 HTTP 响应头。把 content 属性连接到一个 HTTP 头部<br><code>&lt;meta http-equiv=&quot;参数&quot; content=&quot;具体的描述&quot;&gt;</code></p>
+<p> http-equiv属性主要有以下几种参数:</p>
+</li>
+</ol>
+<ul>
+<li><p><strong>content-Type(设定网页字符集，推荐使用HTML5的方式)</strong>:用于设定网页字符集，便于浏览器解析与渲染页面<br>  <code>&lt;meta charset=&quot;utf-8&quot;&gt; //HTML5的方式</code></p>
+</li>
+<li><p><strong>X-UA-Compatible(浏览器采取何种版本渲染当前页面)</strong>：IE8的专用标记,是用来指定Internet Explorer 8 浏览器模拟某个特定版本IE浏览器的渲染方式，以此来解决IE浏览器的兼容问题。<br>  <code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;</code></p>
+<p>  Google开发了一个Google Chrome Frame「Google Chrome 浏览器内嵌框架 – GCF,使用GCF可以让用户的IE浏览器外观不变，但用户在浏览网页时实际上使用的是Chrome的内核，并且支持Windows XP及以上系统的IE6/7/8。</p>
+<p>  所以上段代码可解释为：如果安装了GCF，则使用GCF来渲染页面「”chrome=1”」，如果没有安装GCF，则使用最高版本的IE内核进行渲染「”IE=edge”」。</p>
+<p>  在w3.org的html5验证工具会报错，需要针对三种主流服务器在服务器端配置http equiv规则:</p>
+<ol>
+<li><p>apache服务器<br> 确保 mod_headers 和 mod_setenvif 是available的，然后在httpd.conf「新版Apache的配置文件是 apache2.conf」或者在.htaccess中加入以下规则：</p>
+ <figure class="highlight plain"><figcaption><span>mod_setenvif.c></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;IfModule mod_headers.c&gt;</div><div class="line">BrowserMatch chromeframe gcf</div><div class="line">Header append X-UA-Compatible &quot;chrome=1&quot; env=gcf</div><div class="line">&lt;/IfModule &gt;</div><div class="line">&lt;/IfModule &gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Windows Server在IIS7或者更高版本的服务器<br>只需要修改web.config文件,添加如下信息即可:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;system.webServer&gt;</div><div class="line">&lt;httpProtocol&gt;</div><div class="line">&lt;customHeaders&gt;</div><div class="line">&lt;add name = &quot;X-UA-Compatible&quot; value = &quot;chrome=1&quot; /&gt;</div><div class="line">&lt;/customHeaders&gt;</div><div class="line">&lt;/httpProtocol&gt;</div><div class="line">&lt;/system.webServer&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Nginx服务器中，只需要找到 ginxconf ginx.conf并编辑，在server { }区域里（最好是闭合符前面起一行）添加下列代码即可:<br><code>add_header &quot;X-UA-Compatible&quot; &quot;IE=Edge, chrome=1&quot;;</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>cache-control(指定请求和响应遵循的缓存机制)</strong>: <ol>
+<li>用法1：指导浏览器如何缓存某个响应以及缓存多长时间<br> content具体参数如下：<ol>
+<li>no-cache: 先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。</li>
+<li>no-store: 不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）</li>
+<li>public : 缓存所有响应，但并非必须。因为max-age也可以做到相同效果</li>
+<li>private : 只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）</li>
+<li>maxage : 表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如：max-age=60表示响应可以再缓存和重用 60 秒。</li>
+</ol>
+</li>
+<li>用法2：禁止百度自动转码<br> 用于禁止当前页面在移动端浏览时，被百度自动转码。虽然百度的本意是好的，但是转码效果很多时候却不尽人意。所以可以在head中加入下列代码，就可以避免百度自动转码了<br> <code>&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot; /&gt;</code></li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p><strong>expires(网页到期时间)</strong>: 用于设定网页的到期时间，过期后网页必须到服务器上重新传输</p>
+</li>
+<li><p><strong>refresh(自动刷新并指向某页面)</strong>: 网页将在设定的时间内，自动刷新并调向设定的网址</p>
+</li>
+<li><p><strong>Set-Cookie(cookie设定)</strong>: 如果网页过期。那么这个网页存在本地的cookies也会被自动删除</p>
+</li>
+</ul>
+<h3 id="使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）"><a href="#使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）" class="headerlink" title="使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）"></a>使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</h3><p>随着社交网络的不断发展，meta标签被赋予新的功能,用了meta property=og标签，就是你同意了网页内容可以被其他社会化网站引用等，目前这种协议被SNS网站如Fackbook、renren采用。<br>Facebook的Open Graph允许你指定你的内容如何在用户时间表上显示。这些标签可以让你检查你的数据是使用Insights如何共享在Facebook上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta property=&quot;og:title&quot; content=&quot;The best site&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:image&quot; content=&quot;link_to_image&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:description&quot; content=&quot;description goes here&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<p>与Open Graph相似的还有Twitter的Twitter cards(使用name=”twitter:title”或者name=”twitter:url”)以及Google+使用的Schema.org(使用itemscope和itemprop)。Open Graph已变得非常受欢迎，所以大多数社交网络默认都是Open Graph。</p>
+<h3 id="借鉴文章："><a href="#借鉴文章：" class="headerlink" title="借鉴文章："></a>借鉴文章：</h3><p><a href="http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html" target="_blank" rel="external">http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html</a><br><a href="http://www.tuicool.com/articles/A7j2QjF" target="_blank" rel="external">http://www.tuicool.com/articles/A7j2QjF</a><br><a href="http://www.cnblogs.com/wangjz1991/p/5326224.html" target="_blank" rel="external">http://www.cnblogs.com/wangjz1991/p/5326224.html</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/19/CSS的居中/" itemprop="url">
                   CSS的居中
                 </a>
@@ -293,7 +471,53 @@
         
           
             <h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
-<li><strong> 块中的文字或图片水平居中 </strong>：text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的一层div来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）<br>块状元素自身水平居中（定宽）：margin: 0 auto  ，但是不能作用于浮动元素<br>块状元素自身水平居中（不定宽）：<br>（没有明确设定宽度的block元素，根据块级元素的性质，它默认是独占一行的，所以这个时候block元素本身就是浏览器窗口的宽度或者父级元素的宽度，就不必要来设置水平居中了。）<br>加入table标签：为需要居中的元素的外面加上<table><tbody><tr><td>标签，并设置table 的margin为 margin:0 auto;<br>若是此时对块中的内联内容进行居中的话，则可以采用text-align<br>若是此时对块中的块状内容进行居中的话，则可以采用margin（定宽），也可以采用display:inline后用text-align（不定宽）<br>浮动配合相对定位来进行浮动元素水平居中（不需要知道宽度）：<br>通过给父元素设置 float left，然后给父元素设置 position:relative 和 left:50%，  子元素设置 position:relative 和 left:-50% 来实现水平居中；为了避免父元素设置position: relative带来一些负作用，可以在要居中的元素外面再加上一层父元素专门用来设置而不影响原来的父元素</td></tr></tbody></table></li>
+<li><p><strong> 块中的文字或图片水平居中 </strong>：<br>text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的块状父元素来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）</p>
+</li>
+<li><p><strong> 块状元素自身水平居中（定宽）</strong>：margin: 0 auto  ，但是不能作用于浮动元素</p>
+</li>
+<li><p><strong> 块状元素自身水平居中（不定宽）</strong>：</p>
+<ul>
+<li>没有明确设定宽度的block元素，根据块级元素的性质，它默认是独占一行的，所以这个时候block元素本身就是浏览器窗口的宽度或者父级元素的宽度，就不必要来设置水平居中了。</li>
+<li>若是此时对块中的内联内容进行居中的话，则可以采用text-align</li>
+<li>若是此时对块中的块状内容进行居中的话，则可以采用margin（定宽），也可以采用display:inline后用text-align（不定宽）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong> 浮动配合相对定位来进行浮动元素水平居中（不需要知道宽度） </strong>：<br>通过给父元素设置 float left，然后给父元素设置 position:relative 和 left:50%，子元素设置 position:relative 和 left:-50% 来实现水平居中；为了避免父元素设置position:relative带来一些负作用，需要在要居中的元素外面再加上一层父元素专门用来设置而不影响原来的父元素</p>
+</li>
+<li><p><strong> 使用绝对定位（必须知道宽度） </strong>：<br>绝对定位进行居中的原理是通过把这个绝对定位元素的left或right属性设为50%,这个时候元素并不是居中的，而是比居中的位置向右或向左偏了这个元素宽度的一半的距离，所以需要使用一个负的margin-left或margin-right的值来把它拉回到居中的位置，这个负的margin值就取元素宽度的一半。</p>
+</li>
+<li><p><strong>text-align结合绝对定位及负margin值实现水平居中（需要知道宽度） </strong>：</p>
+<ul>
+<li>没有应用left、top等属性值的absolute元素就是个不占据空间的普通元素，如果是block水平的，换行显示；如果是inline水平的，跟在前面的文字后面显示。</li>
+<li>text-align属性作用于文字等inline(或inline-block)元素</li>
+<li>结合以上两点，可在absolute元素的标签前面加上&nbsp;，absolute元素的父元素设置text-align:center.此时absolute元素沿着父元素的中线显示（实际上由于&nbsp;会占据像素值，所以是偏中线3~4px),再利用margin-left: - (“1/2个元素宽度” + 2)即可实现</li>
+<li>这是一种方法，但是很少用到</li>
+</ul>
+</li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
+<li><p><strong> 父元素高度确定的单行文本/图片 </strong>：<br>通过设置父元素的 height 和 line-height 高度一致来实现的。最好使用相对单位（em/%)定义你的 height 和 line-height，这样当字体大小变化时，height能相应变化不想毁了你的布局的话，overflow: hidden 一定要加上，否则文字溢出将会破坏其他布局（IE中不支持img的垂直居中）</p>
+</li>
+<li><p><strong> 块级元素中的多行文字图片垂直居中（不定高） </strong>：<br>通过设置上下内边距padding相等<br>同时支持块级元素和内联元素，支持所有浏览器</p>
+</li>
+<li><p><strong> 使用绝对定位（必须知道高度） </strong>：<br>绝对定位进行居中的原理是通过把这个绝对定位元素的top或bottom属性设为50%,这个时候元素并不是居中的，而是比居中的位置向下或向上偏了这个元素高度的一半的距离，所以需要使用一个负的margin-top或margin-bottom的值来把它拉回到居中的位置，这个负的margin值就取元素高度的一半。</p>
+</li>
+<li><p><strong> 加入table标签实现垂直居中 </strong>：<br>为需要居中的元素的外面加上<code>&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;</code>标签，td标签默认情况下就默认设置了vertical-align 为 middle，所以可以不需要显式地设置。</p>
+</li>
+<li><p><strong> 使用display: table-cell </strong><br>将父元素以表格形式渲染，即可激活vertical-align属性<br>和一个合法的<code>&lt;td&gt;</code>元素必须在<code>&lt;table&gt;</code>里一样，display: table-cell 元素必须作为 display: table 的元素的子孙出现,IE不支持</p>
+</li>
+</ul>
+<h3 id="其他居中"><a href="#其他居中" class="headerlink" title="其他居中"></a>其他居中</h3><ul>
+<li><strong> 实现水平垂直居中 </strong>：<ul>
+<li>使用绝对定位（必须知道高度和宽度），利用上面提到的两者结合即可</li>
+<li>另一种使用绝对定位的方式（必须知道高度和宽度）： height: 100px; width: 100px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin:auto;但是此方法只只支持IE9+,谷歌，火狐等符合w3c标准的现代浏览器。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong> 宽高未知的img水平垂直居中 </strong>：<br>为父级加<code>text-align: center</code>以水平居中，img加<code>vertical-align: middle</code> 后，还要对其他内联元素也加vertical-align才能垂直居中，如果没有其他内联元素，可以添加高度为100%的空span元素，并display: inline-block.</li>
 </ul>
 
           
@@ -729,7 +953,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
