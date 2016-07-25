@@ -1,0 +1,588 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="布局," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="圣杯布局（经典三列布局）布局要求：1、三列布局，中间宽度自适应，两边定宽；2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)3、允许任意列的高度最高；4、要求只用一个额外的DIV标签；5、要求用最简单的CSS、最少的HACK语句；实现方法：12345&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;main&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS经典布局">
+<meta property="og:url" content="http://Cccshine.github.io/2016/07/25/CSS经典布局/index.html">
+<meta property="og:site_name" content="Cshine">
+<meta property="og:description" content="圣杯布局（经典三列布局）布局要求：1、三列布局，中间宽度自适应，两边定宽；2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)3、允许任意列的高度最高；4、要求只用一个额外的DIV标签；5、要求用最简单的CSS、最少的HACK语句；实现方法：12345&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;main&amp;q">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_3.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_4.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_5.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_6.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_7.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_3.png">
+<meta property="og:updated_time" content="2016-07-25T16:21:21.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS经典布局">
+<meta name="twitter:description" content="圣杯布局（经典三列布局）布局要求：1、三列布局，中间宽度自适应，两边定宽；2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)3、允许任意列的高度最高；4、要求只用一个额外的DIV标签；5、要求用最简单的CSS、最少的HACK语句；实现方法：12345&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;main&amp;q">
+<meta name="twitter:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://Cccshine.github.io/2016/07/25/CSS经典布局/"/>
+
+  <title> CSS经典布局 | Cshine </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cshine</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Full of passion for life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS经典布局
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T19:32:50+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="圣杯布局（经典三列布局）"><a href="#圣杯布局（经典三列布局）" class="headerlink" title="圣杯布局（经典三列布局）"></a>圣杯布局（经典三列布局）</h3><p>布局要求：<br>1、三列布局，中间宽度自适应，两边定宽；<br>2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)<br>3、允许任意列的高度最高；<br>4、要求只用一个额外的DIV标签；<br>5、要求用最简单的CSS、最少的HACK语句；<br>实现方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;main&quot;&gt;Main&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;Right&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="1-利用浮动，margin负值，相对定位，一个额外div包住这三栏"><a href="#1-利用浮动，margin负值，相对定位，一个额外div包住这三栏" class="headerlink" title="1.利用浮动，margin负值，相对定位，一个额外div包住这三栏"></a>1.利用浮动，margin负值，相对定位，一个额外div包住这三栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	padding-left: 200px;</div><div class="line">	padding-right: 150px;</div><div class="line">	overflow: hidden; zoom: 1;/* 清浮动 */</div><div class="line">	min-width: 550px; /* 可用性的考虑，防止窗口缩小时中间栏消失，一般可设为 两边left宽度+right宽度 */	</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	height: 30px;</div><div class="line">	width: 200px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">	background: #ccc;</div><div class="line">	position: relative;</div><div class="line">	left: -200px;</div><div class="line">	_left: 150px;/* IE6 hack 这个值是右边栏的宽度*/</div><div class="line">&#125;</div><div class="line">.main&#123;</div><div class="line">	width: 100%;</div><div class="line">	height: 100px; </div><div class="line">	background: #9cf;</div><div class="line">	float: left;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -150px;</div><div class="line">	background: #fcc;</div><div class="line">	position: relative;</div><div class="line">	right: -150px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度100%，left和right定宽，我们设为经典的200px,150px,三者都加浮动，<code>float: left;</code>此时由于main宽度为100%,所以left和right上不去，浮在它下面（注意给父级清浮动）<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_1.png" alt=""><br>为left栏设置<code>margin-left: -100%;</code>为右边栏设置 <code>margin-left: -150px;</code> 此时左右栏浮上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_2.png" alt=""><br>为这三栏的父级div设置padding-left: 200px; padding-right: 150px; 留出左右栏的宽度，但是此时由于父级的padding左右栏也缩进来了<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_3.png" alt=""><br>为左右栏加相对定位，各自相对于自己把自己挪出去，即可得到圣杯布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_4.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80.html" target="_blank" rel="external">demo演示</a></p>
+<h4 id="2-利用相对父级绝对定位，margin值，一个额外div包住这三栏"><a href="#2-利用相对父级绝对定位，margin值，一个额外div包住这三栏" class="headerlink" title="2.利用相对父级绝对定位，margin值，一个额外div包住这三栏"></a>2.利用相对父级绝对定位，margin值，一个额外div包住这三栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	position: relative;</div><div class="line">	min-width: 550px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background:#ccc;</div><div class="line">	position: absolute;</div><div class="line">	top: 0;</div><div class="line">	left: 0;</div><div class="line">	_left: -200px; /* IE6 hack */</div><div class="line">&#125;</div><div class="line">/* Main宽度为auto */</div><div class="line">.main&#123;</div><div class="line">	width: auto;</div><div class="line">	height: 100px;</div><div class="line">	background: #9cf;</div><div class="line">	margin-left: 200px;</div><div class="line">	margin-right: 150px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	background:#fcc;</div><div class="line">	position: absolute;</div><div class="line">	right: 0;</div><div class="line">	top: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度为auto，left和right定宽，我们设为经典的200px,150px,此时按html结构顺序排列如下<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_5.png" alt=""><br>为left栏和right栏设置相对于父元素的绝对定位 此时左右栏便上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_6.png" alt=""><br>main设置<code>margin-left: 200px; margin-right: 150px;</code> 留出左右栏的宽度，即可得圣杯布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_7.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%802.html" target="_blank" rel="external">demo演示</a></p>
+<h3 id="2-双飞翼布局"><a href="#2-双飞翼布局" class="headerlink" title="2.双飞翼布局"></a>2.双飞翼布局</h3><p>圣杯布局的改良，效果一样，但是实现简单一些</p>
+<h4 id="利用浮动，margin负值，两个额外的div"><a href="#利用浮动，margin负值，两个额外的div" class="headerlink" title="利用浮动，margin负值，两个额外的div"></a>利用浮动，margin负值，两个额外的div</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">	&lt;div class=&quot;main&quot;&gt;</div><div class="line">		&lt;div class=&quot;inner&quot;&gt;Main&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;Right</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	overflow: hidden; zoom: 1;/* 清浮动 */</div><div class="line">	min-width: 550px;  /* 可用性的考虑，防止窗口缩小时中间栏消失 */	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.left&#123;</div><div class="line">	background: #ccc;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">&#125;</div><div class="line">.main&#123;</div><div class="line">	width: 100%;</div><div class="line">	float: left;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	background: #fcc;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -150px;</div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">	background: #9cf;</div><div class="line">	height: 100px;</div><div class="line">	margin-left: 200px;</div><div class="line">	margin-right: 150px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度100%，left和right定宽，我们设为经典的200px,150px,三者都加浮动，<code>float: left;</code>此时由于main宽度为100%,所以left和right上不去，浮在它下面（注意给父级清浮动）<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png" alt=""><br>为left栏设置<code>margin-left: -100%;</code>为右边栏设置 <code>margin-left: -150px;</code> 此时左右栏浮上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_2.png" alt=""><br>再在新加的类名为inner的div上设置<code>margin-left: 200px; margin-right: 150px;</code> 给出两边栏的宽度即可得到双飞翼布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_3.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80.html" target="_blank" rel="external">demo演示</a><br>与圣杯布局的实现不同在于：</p>
+<ul>
+<li>双飞翼布局的HTML结构多了一个div(.inner)，这个div是加给main内层的</li>
+<li>不需要父级div的padding，不需要左右栏的相对定位，只需要浮动和margin负值</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/布局/" rel="tag">#布局</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/25/神奇的margin负值/" rel="next" title="神奇的margin负值">
+                <i class="fa fa-chevron-left"></i> 神奇的margin负值
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/icon.jpg"
+               alt="曹嘉聪" />
+          <p class="site-author-name" itemprop="name">曹嘉聪</p>
+          <p class="site-description motion-element" itemprop="description">Full of passion for life</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#圣杯布局（经典三列布局）"><span class="nav-number">1.</span> <span class="nav-text">圣杯布局（经典三列布局）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-利用浮动，margin负值，相对定位，一个额外div包住这三栏"><span class="nav-number">1.1.</span> <span class="nav-text">1.利用浮动，margin负值，相对定位，一个额外div包住这三栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-利用相对父级绝对定位，margin值，一个额外div包住这三栏"><span class="nav-number">1.2.</span> <span class="nav-text">2.利用相对父级绝对定位，margin值，一个额外div包住这三栏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-双飞翼布局"><span class="nav-number">2.</span> <span class="nav-text">2.双飞翼布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用浮动，margin负值，两个额外的div"><span class="nav-number">2.1.</span> <span class="nav-text">利用浮动，margin负值，两个额外的div</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹嘉聪</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

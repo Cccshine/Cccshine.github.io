@@ -248,6 +248,240 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/25/CSS经典布局/" itemprop="url">
+                  CSS经典布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T19:32:50+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="圣杯布局（经典三列布局）"><a href="#圣杯布局（经典三列布局）" class="headerlink" title="圣杯布局（经典三列布局）"></a>圣杯布局（经典三列布局）</h3><p>布局要求：<br>1、三列布局，中间宽度自适应，两边定宽；<br>2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)<br>3、允许任意列的高度最高；<br>4、要求只用一个额外的DIV标签；<br>5、要求用最简单的CSS、最少的HACK语句；<br>实现方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;main&quot;&gt;Main&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;Right&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="1-利用浮动，margin负值，相对定位，一个额外div包住这三栏"><a href="#1-利用浮动，margin负值，相对定位，一个额外div包住这三栏" class="headerlink" title="1.利用浮动，margin负值，相对定位，一个额外div包住这三栏"></a>1.利用浮动，margin负值，相对定位，一个额外div包住这三栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	padding-left: 200px;</div><div class="line">	padding-right: 150px;</div><div class="line">	overflow: hidden; zoom: 1;/* 清浮动 */</div><div class="line">	min-width: 550px; /* 可用性的考虑，防止窗口缩小时中间栏消失，一般可设为 两边left宽度+right宽度 */	</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	height: 30px;</div><div class="line">	width: 200px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">	background: #ccc;</div><div class="line">	position: relative;</div><div class="line">	left: -200px;</div><div class="line">	_left: 150px;/* IE6 hack 这个值是右边栏的宽度*/</div><div class="line">&#125;</div><div class="line">.main&#123;</div><div class="line">	width: 100%;</div><div class="line">	height: 100px; </div><div class="line">	background: #9cf;</div><div class="line">	float: left;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -150px;</div><div class="line">	background: #fcc;</div><div class="line">	position: relative;</div><div class="line">	right: -150px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度100%，left和right定宽，我们设为经典的200px,150px,三者都加浮动，<code>float: left;</code>此时由于main宽度为100%,所以left和right上不去，浮在它下面（注意给父级清浮动）<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_1.png" alt=""><br>为left栏设置<code>margin-left: -100%;</code>为右边栏设置 <code>margin-left: -150px;</code> 此时左右栏浮上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_2.png" alt=""><br>为这三栏的父级div设置padding-left: 200px; padding-right: 150px; 留出左右栏的宽度，但是此时由于父级的padding左右栏也缩进来了<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_3.png" alt=""><br>为左右栏加相对定位，各自相对于自己把自己挪出去，即可得到圣杯布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_4.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80.html" target="_blank" rel="external">demo演示</a></p>
+<h4 id="2-利用相对父级绝对定位，margin值，一个额外div包住这三栏"><a href="#2-利用相对父级绝对定位，margin值，一个额外div包住这三栏" class="headerlink" title="2.利用相对父级绝对定位，margin值，一个额外div包住这三栏"></a>2.利用相对父级绝对定位，margin值，一个额外div包住这三栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	position: relative;</div><div class="line">	min-width: 550px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background:#ccc;</div><div class="line">	position: absolute;</div><div class="line">	top: 0;</div><div class="line">	left: 0;</div><div class="line">	_left: -200px; /* IE6 hack */</div><div class="line">&#125;</div><div class="line">/* Main宽度为auto */</div><div class="line">.main&#123;</div><div class="line">	width: auto;</div><div class="line">	height: 100px;</div><div class="line">	background: #9cf;</div><div class="line">	margin-left: 200px;</div><div class="line">	margin-right: 150px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	background:#fcc;</div><div class="line">	position: absolute;</div><div class="line">	right: 0;</div><div class="line">	top: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度为auto，left和right定宽，我们设为经典的200px,150px,此时按html结构顺序排列如下<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_5.png" alt=""><br>为left栏和right栏设置相对于父元素的绝对定位 此时左右栏便上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_6.png" alt=""><br>main设置<code>margin-left: 200px; margin-right: 150px;</code> 留出左右栏的宽度，即可得圣杯布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_7.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%802.html" target="_blank" rel="external">demo演示</a></p>
+<h3 id="2-双飞翼布局"><a href="#2-双飞翼布局" class="headerlink" title="2.双飞翼布局"></a>2.双飞翼布局</h3><p>圣杯布局的改良，效果一样，但是实现简单一些</p>
+<h4 id="利用浮动，margin负值，两个额外的div"><a href="#利用浮动，margin负值，两个额外的div" class="headerlink" title="利用浮动，margin负值，两个额外的div"></a>利用浮动，margin负值，两个额外的div</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">	&lt;div class=&quot;main&quot;&gt;</div><div class="line">		&lt;div class=&quot;inner&quot;&gt;Main&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;Right</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	overflow: hidden; zoom: 1;/* 清浮动 */</div><div class="line">	min-width: 550px;  /* 可用性的考虑，防止窗口缩小时中间栏消失 */	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.left&#123;</div><div class="line">	background: #ccc;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">&#125;</div><div class="line">.main&#123;</div><div class="line">	width: 100%;</div><div class="line">	float: left;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	background: #fcc;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -150px;</div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">	background: #9cf;</div><div class="line">	height: 100px;</div><div class="line">	margin-left: 200px;</div><div class="line">	margin-right: 150px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度100%，left和right定宽，我们设为经典的200px,150px,三者都加浮动，<code>float: left;</code>此时由于main宽度为100%,所以left和right上不去，浮在它下面（注意给父级清浮动）<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png" alt=""><br>为left栏设置<code>margin-left: -100%;</code>为右边栏设置 <code>margin-left: -150px;</code> 此时左右栏浮上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_2.png" alt=""><br>再在新加的类名为inner的div上设置<code>margin-left: 200px; margin-right: 150px;</code> 给出两边栏的宽度即可得到双飞翼布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_3.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80.html" target="_blank" rel="external">demo演示</a><br>与圣杯布局的实现不同在于：</p>
+<ul>
+<li>双飞翼布局的HTML结构多了一个div(.inner)，这个div是加给main内层的</li>
+<li>不需要父级div的padding，不需要左右栏的相对定位，只需要浮动和margin负值</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/25/神奇的margin负值/" itemprop="url">
+                  神奇的margin负值
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T13:22:23+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="margin负值的原理"><a href="#margin负值的原理" class="headerlink" title="margin负值的原理"></a>margin负值的原理</h3><h4 id="1-负边距在普通文档流中的作用和效果"><a href="#1-负边距在普通文档流中的作用和效果" class="headerlink" title="1.负边距在普通文档流中的作用和效果"></a>1.负边距在普通文档流中的作用和效果</h4><p>那些没有脱离文档流的元素（指非浮动元素、非绝对定位、非固定定位的元素等），其在页面中的位置是随着文档流的变化而变化的。<br>如下图所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/normal_1.png" alt="normal_1"><br><strong>负边距对这些由文档流控制的元素的作用是</strong>：会使它们在文档流中的位置发生偏移，但这种偏移不同于相对定位。<br>通过相对定位偏移后，它偏移前占据的空间仍然被它占据，不会让文档流的其它元素乘虚而入。<br>而通过负边距进行偏移的元素，它会放弃偏移前占据的空间，这样它后面文档流中的其它元素就会“流”过来填充这部分空间。<br>现在我们把上图中的block元素、inline元素以及inline-block元素都设一个负边距 margin:-10px;<br>看看会发生什么：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/normal_2.png" alt="normal_2"><br>上图中蓝色的block元素好像向左和向上都分别嵌入了浏览器窗口的边界里10px,然后block元素下面的文字也爬到了它身上，inline元素向左移动盖住了它前面的一个字，它后面的文字也有一部分覆盖在了它身上，inline-block的位置变化也很明显。<br>负的边距好像能减小元素在文档流中的尺寸一样，但事实上，它的尺寸大小并没变，只是文档流在计算元素位置的时候，会认为负边距把元素的尺寸减小了，元素的边界发生了变化，因此位置也就发生变化了。这只是打个很形象的比喻，帮助理解。要注意的是，文档流只能是后面的流向前面的，即文档流只能向左或向上流动，不能向下或向右移动。<br>简而言之，在普通文档流中，元素的最终<strong>边界</strong>是由margin决定的，margin为负的时候就相当于元素的边界向里收，文档流认的只是这个边界，不会管你实际的尺寸是多少,对于margin的top,right,bottom,left负值都是如此，margin的top和left负值表现为元素向上向左位移（因为上边界向下、左边界向右收了），而margin的right和bottom负值对自身的显示没有什么影响，但是它后面的元素会爬到它的身上（因为右边界边界向左、下边界向上收了）。<a href="">多列等高布局</a>可以利用这个实现</p>
+<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E6%99%AE%E9%80%9A%E6%96%87%E6%A1%A3%E6%B5%81.html" target="_blank" rel="external">demo演示</a></p>
+<h4 id="2-左右负边距对元素宽度的影响"><a href="#2-左右负边距对元素宽度的影响" class="headerlink" title="2.左右负边距对元素宽度的影响"></a>2.左右负边距对元素宽度的影响</h4><p>负边距不仅能影响元素在文档流中的位置，还能增加元素的宽度！<br>这个作用能实现的<strong>前提</strong>是：该元素没有设定width属性或width:auto。<br>来看下面的例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">	&lt;div class=&quot;box1&quot;&gt;我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">	width: 500px;</div><div class="line">	margin: 100px auto;</div><div class="line">	border: 10px solid red;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">	background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此时情况如下所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence1.png" alt=""><br>添加<code>margin-right；-20px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence2.png" alt=""><br>添加<code>margin-left；-20px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence3.png" alt=""><br>可以看到负的margin使得未设置宽度的元素的宽度发生了变化,超出了父元素。我们顺便来看看此时上下负margin的情况</p>
+<p>添加<code>margin-top；-10px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_4.png" alt=""><br>添加<code>margin-bottom；-10px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_5.png" alt=""><br>最终的box1与container的位置关系如下图所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_6.png" alt=""><br>可以看到，margin-top为负值不会增加高度，会改变元素的最终边界，从而产生向上位移，此处向下收了10px从而向上移动了10px,父元素container设置的border也是10px,所以刚好遮住了;<br>而margin-bottom为负值不会位移,而是会改变元素的最终边界，此处向上收了10px,所以导致父元素container的高度也减少了10px,刚好设置的border也是10px,所以刚好遮住了</p>
+<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%AF%B9%E8%87%AA%E8%BA%AB%E5%AE%BD%E5%BA%A6%E5%BD%B1%E5%93%8D.html" target="_blank" rel="external">demo演示</a></p>
+<h4 id="3-负边距对浮动元素的影响"><a href="#3-负边距对浮动元素的影响" class="headerlink" title="3.负边距对浮动元素的影响"></a>3.负边距对浮动元素的影响</h4><p>负边距对浮动元素的影响与负边距对文档流中元素的影响其实是差不多的。文档流中元素的位置由文档流的走向决定，浮动的元素也可以看成有一个“浮动流”存在，不过浮动流既可以向左，也可以向右。<br>来看下面的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;div class=&quot;box box1&quot;&gt;box1&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box box2&quot;&gt;box2&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box box3&quot;&gt;box3&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">	width: 400px;</div><div class="line">	height: 200px;</div><div class="line">	margin: 50px auto;</div><div class="line">	border: 5px solid red;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">	float: left;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">	background: blue;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">	background: green;</div><div class="line">&#125;</div><div class="line">.box3&#123;</div><div class="line">	background: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此时情况如下所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_7.png" alt=""><br>给它们都设一个<code>margin-right:-50px;</code>,变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_8.png" alt=""><br>3个box的右边界都收了50px,后面的box叠到了前面的box上</p>
+<p>再看缩小父元素container宽度为220px后的情况：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_9.png" alt=""><br>此时由于宽度不够box3掉下来了</p>
+<p>我们给box3单独设一个<code>margin-left:-80px;</code>看看会怎么样<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_10.png" alt=""><br>看~它上去了，并且盖住了box2的80px，因为box3的左边界向右收了80px，所以它占据的宽度只有20px,这样父元素的宽度够容纳box3，于是它就上去了。<br>现在将box3的设为<code>margin-left:-100px;</code>：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_11.png" alt=""><br>此时box3完全盖住box2<br>现在将box3的设为<code>margin-left:-200px;</code>：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_12.png" alt=""><br>此时box3完全盖住box1，box2又出现了<br>所以负margin会改变浮动元素的显示位置，某个元素虽然是写在了后面，但可以通过负边距让它在浏览器显示的时候是在前面的。<a href="">圣杯布局</a>、<a href="">双飞翼布局</a>都是利用这个原理实现的。</p>
+<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E8%B4%9F%E8%BE%B9%E8%B7%9D%E5%AF%B9%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E7%9A%84%E5%BD%B1%E5%93%8D.html" target="_blank" rel="external">demo演示</a></p>
+<h4 id="负边距对绝对定位元素的影响"><a href="#负边距对绝对定位元素的影响" class="headerlink" title="负边距对绝对定位元素的影响"></a>负边距对绝对定位元素的影响</h4><p>绝对定位的元素定义的top、right、bottom、left等值是元素自身的边界到最近的已定位的祖先元素的距离，这个元素自身的边界指的就是margin定义的边界，所以，如果margin为正的时候，那它的边界是向外扩的，如果margin为负的时候，则它的边界是向里收的。利用这点，就有了经典的利用绝对定位来居中的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;absolute&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.absolute&#123;</div><div class="line">	position: absolute;</div><div class="line">    top:50%;</div><div class="line">    left:50%;</div><div class="line">    height: 200px;</div><div class="line">    width: 200px;</div><div class="line">    background-color: blue;</div><div class="line">    margin-top: -100px;</div><div class="line">    margin-left: -100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样就实现了如下所示的水平垂直居中：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_13.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%AF%B9%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%BD%B1%E5%93%8D.html" target="_blank" rel="external">demo演示</a></p>
+<h3 id="margin负值的应用"><a href="#margin负值的应用" class="headerlink" title="margin负值的应用"></a>margin负值的应用</h3><ul>
+<li><a href="">圣杯布局</a></li>
+<li><a href="">双飞翼布局</a></li>
+<li><a href="">多列等高布局</a></li>
+<li>水平垂直居中（上文有实现方法）</li>
+<li><p>去除列表最右边的边距<br>我们经常会使用浮动列表展示信息，为了美观通常为每个列表之间设置一定的间距（<code>margin-right</code>）,当父元素的宽度固定式，靠近右边边界的子元素就不应该有正向的margin-right了，否则这一行就容纳的子元素个数就会少一个，去除的方法通常是为最右端的li添加class，设置<code>margin-right:0;</code> ,如果这些子元素是在模板中通过循环动态输出的，那在循环的时候还得判断哪些子元素是靠近右边边界的，如果是就加上一个class。这时就会很麻烦，所以解决办法是加大子元素的父容器的宽度，可以在css里直接增大父容器宽度，外层container再overflow即可，但是利用负margin也可以实现这种效果：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">	    &lt;li&gt;子元素1&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素2&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素3&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素4&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素5&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素6&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">      width:320px;</div><div class="line">      height:210px;</div><div class="line">      margin: 30px auto;</div><div class="line">      border:5px solid #000;</div><div class="line">      /*overflow: hidden;*/</div><div class="line">&#125;</div><div class="line">  .container ul&#123; </div><div class="line">  	  margin-right: -10px;/* 相当于宽度增加10px*/</div><div class="line">     overflow: hidden;</div><div class="line">     zoom :1;</div><div class="line">     /*width: 330px;*/</div><div class="line">  &#125;</div><div class="line">.container ul li&#123;</div><div class="line">   width:100px;</div><div class="line">   height:100px;</div><div class="line">   float:left;</div><div class="line">   margin-right:10px;</div><div class="line">   margin-bottom:10px;</div><div class="line">   background:#06c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  <img src="http://7xwrfa.com1.z0.glb.clouddn.com/apply_1.png" alt=""><br>  <a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8E%BB%E9%99%A4%E6%9C%80%E5%90%8E%E7%9A%84border-bottom.html" target="_blank" rel="external">demo演示</a></p>
+</li>
+<li><p>去除列表最后一个li元素的border-bottom<br>列表中我们经常会添加border-bottom值，最后一个li的border-bottom往往会与外边框重合，视觉上不雅观，往往要移除,很简单只需要对li的设置<code>margin-bottom:-边框值</code>,父元素再<code>overflow: hidden</code>即可.同理该方法稍微改动一下还可以处理border-right等</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;list&quot;&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">   &lt;/ul&gt;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.list&#123;</div><div class="line">      width:390px;</div><div class="line">      margin:50px auto;</div><div class="line">      background:#F4F8FC;</div><div class="line">      border-radius:3px;</div><div class="line">      border:2px solid #D7E2EC;</div><div class="line">      overflow: hidden;</div><div class="line">  &#125;</div><div class="line">  .list li&#123;</div><div class="line">      height:25px;</div><div class="line">      line-height:25px;</div><div class="line">      padding:5px;</div><div class="line">      border-bottom:1px dotted red;</div><div class="line">      margin-bottom: -1px;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p> <img src="http://7xwrfa.com1.z0.glb.clouddn.com/apply_2.png" alt=""><br>  <a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8E%BB%E9%99%A4%E6%9C%80%E5%90%8E%E7%9A%84border-bottom.html" target="_blank" rel="external">demo演示</a> </p>
+</li>
+<li>图片与文字对齐问题<br>图片与文字默认是居底对齐了。所以当图片与文字在一起的时候往往都是不对齐的。尤其图片较小时就更加明显了，我看到很多人使用vertical-align:middle;对齐。在火狐下效果是不错，但是IE下，虽然是效果好了些，但还是不够。<br>如果，图片是个20像素*20像素左右的小图片，文字也差不多12px大，则使用vertical-align:text-bottom;是不错的个方法。还有个屡试不爽，兼容性不错的方法就是使用margin负值了。img标签是个很不错的标签，支持margin四个方向的正的和负的定位。一般img标签打头的小图标与文字对齐的话，<code>img{margin:0 3px -3px 0;}</code>可以说是公式版的东西，能实现效果和兼容性俱佳的对齐效果。<br>  <a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9B%BE%E7%89%87%E4%B8%8E%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90.html" target="_blank" rel="external">demo演示</a> </li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/23/meta标签详解/" itemprop="url">
                   meta标签详解
                 </a>
@@ -517,7 +751,7 @@
 </li>
 </ul>
 <ul>
-<li><strong> 宽高未知的img水平垂直居中 </strong>：<br>为父级加<code>text-align: center</code>以水平居中，img加<code>vertical-align: middle</code> 后，还要对其他内联元素也加vertical-align才能垂直居中，如果没有其他内联元素，可以添加高度为100%的空span元素，并display: inline-block.</li>
+<li><strong> 宽高未知的img水平垂直居中 </strong>：<br>为父级加<code>text-align: center</code>以水平居中，img加<code>vertical-align: middle</code> 后，还要对其他内联元素也加vertical-align才能垂直居中，<a href="">(关于vertical-align可以参看这篇文章)</a>如果没有其他内联元素，可以添加高度为100%的空span元素，并display: inline-block.</li>
 </ul>
 
           
@@ -568,7 +802,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/18/几种布局比较/" itemprop="url">
+                <a class="post-title-link" href="/2016/07/18/流体、浮动、层模式等布局比较/" itemprop="url">
                   几种布局比较
                 </a>
               
@@ -953,7 +1187,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -963,7 +1197,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
