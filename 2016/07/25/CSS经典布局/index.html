@@ -1,0 +1,679 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML/CSS,布局," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="圣杯布局（经典三列布局）布局要求：1、三列布局，中间宽度自适应，两边定宽；2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)3、允许任意列的高度最高；4、要求只用一个额外的DIV标签；5、要求用最简单的CSS、最少的HACK语句；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS经典布局回顾">
+<meta property="og:url" content="http://Cccshine.github.io/2016/07/25/CSS经典布局/index.html">
+<meta property="og:site_name" content="Cshine">
+<meta property="og:description" content="圣杯布局（经典三列布局）布局要求：1、三列布局，中间宽度自适应，两边定宽；2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)3、允许任意列的高度最高；4、要求只用一个额外的DIV标签；5、要求用最简单的CSS、最少的HACK语句；">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_3.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_4.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_5.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_6.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_7.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_3.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_3.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_4.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao2_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao2_2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao2_3.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao3_1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao3_2.png">
+<meta property="og:updated_time" content="2016-08-03T14:48:28.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS经典布局回顾">
+<meta name="twitter:description" content="圣杯布局（经典三列布局）布局要求：1、三列布局，中间宽度自适应，两边定宽；2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)3、允许任意列的高度最高；4、要求只用一个额外的DIV标签；5、要求用最简单的CSS、最少的HACK语句；">
+<meta name="twitter:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://Cccshine.github.io/2016/07/25/CSS经典布局/"/>
+
+  <title> CSS经典布局回顾 | Cshine </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Cshine</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Full of passion for life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS经典布局回顾
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T19:32:50+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/25/CSS经典布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/CSS经典布局/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          <span>&nbsp; | &nbsp;
+          <span id="busuanzi_value_page_pv" ></span>次阅读
+          </span>    
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="圣杯布局（经典三列布局）"><a href="#圣杯布局（经典三列布局）" class="headerlink" title="圣杯布局（经典三列布局）"></a>圣杯布局（经典三列布局）</h4><p>布局要求：<br>1、三列布局，中间宽度自适应，两边定宽；<br>2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)<br>3、允许任意列的高度最高；<br>4、要求只用一个额外的DIV标签；<br>5、要求用最简单的CSS、最少的HACK语句；<br><a id="more"></a><br>实现方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;main&quot;&gt;Main&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;Right&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="1-利用浮动，margin负值，相对定位，一个额外div包住这三栏"><a href="#1-利用浮动，margin负值，相对定位，一个额外div包住这三栏" class="headerlink" title="1.利用浮动，margin负值，相对定位，一个额外div包住这三栏"></a>1.利用浮动，margin负值，相对定位，一个额外div包住这三栏</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	padding-left: 200px;</div><div class="line">	padding-right: 150px;</div><div class="line">	overflow: hidden; zoom: 1;/* 清浮动 */</div><div class="line">	min-width: 550px; /* 可用性的考虑，防止窗口缩小时中间栏消失，一般可设为 两边left宽度+right宽度 */	</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	height: 30px;</div><div class="line">	width: 200px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">	background: #ccc;</div><div class="line">	position: relative;</div><div class="line">	left: -200px;</div><div class="line">	_left: 150px;/* IE6 hack 这个值是右边栏的宽度*/</div><div class="line">&#125;</div><div class="line">.main&#123;</div><div class="line">	width: 100%;</div><div class="line">	height: 100px; </div><div class="line">	background: #9cf;</div><div class="line">	float: left;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -150px;</div><div class="line">	background: #fcc;</div><div class="line">	position: relative;</div><div class="line">	right: -150px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度100%，left和right定宽，我们设为经典的200px,150px,三者都加浮动，<code>float: left;</code>此时由于main宽度为100%,所以left和right上不去，浮在它下面（注意给父级清浮动）<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png" alt=""><br>为left栏设置<code>margin-left: -100%;</code>为右边栏设置 <code>margin-left: -150px;</code> 此时左右栏浮上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_2.png" alt=""><br>为这三栏的父级div设置padding-left: 200px; padding-right: 150px; 留出左右栏的宽度，但是此时由于父级的padding左右栏也缩进来了<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_3.png" alt=""><br>为左右栏加相对定位，各自相对于自己把自己挪出去，即可得到圣杯布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_4.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80.html" target="_blank" rel="external">demo演示</a></p>
+<h5 id="2-利用相对父级绝对定位，margin值，一个额外div包住这三栏"><a href="#2-利用相对父级绝对定位，margin值，一个额外div包住这三栏" class="headerlink" title="2.利用相对父级绝对定位，margin值，一个额外div包住这三栏"></a>2.利用相对父级绝对定位，margin值，一个额外div包住这三栏</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	position: relative;</div><div class="line">	min-width: 550px;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background:#ccc;</div><div class="line">	position: absolute;</div><div class="line">	top: 0;</div><div class="line">	left: 0;</div><div class="line">	_left: -200px; /* IE6 hack */</div><div class="line">&#125;</div><div class="line">/* Main宽度为auto */</div><div class="line">.main&#123;</div><div class="line">	width: auto;</div><div class="line">	height: 100px;</div><div class="line">	background: #9cf;</div><div class="line">	margin-left: 200px;</div><div class="line">	margin-right: 150px;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	background:#fcc;</div><div class="line">	position: absolute;</div><div class="line">	right: 0;</div><div class="line">	top: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度为auto，left和right定宽，我们设为经典的200px,150px,此时按html结构顺序排列如下<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_5.png" alt=""><br>为left栏和right栏设置相对于父元素的绝对定位 此时左右栏便上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_6.png" alt=""><br>main设置<code>margin-left: 200px; margin-right: 150px;</code> 留出左右栏的宽度，即可得圣杯布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shengbei_7.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%802.html" target="_blank" rel="external">demo演示</a></p>
+<h4 id="2-双飞翼布局"><a href="#2-双飞翼布局" class="headerlink" title="2.双飞翼布局"></a>2.双飞翼布局</h4><p>圣杯布局的改良，效果一样，但是实现简单一些</p>
+<h5 id="利用浮动，margin负值，两个额外的div"><a href="#利用浮动，margin负值，两个额外的div" class="headerlink" title="利用浮动，margin负值，两个额外的div"></a>利用浮动，margin负值，两个额外的div</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">	&lt;div class=&quot;main&quot;&gt;</div><div class="line">		&lt;div class=&quot;inner&quot;&gt;Main&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;left&quot;&gt;Left&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;right&quot;&gt;Right</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">	overflow: hidden; zoom: 1;/* 清浮动 */</div><div class="line">	min-width: 550px;  /* 可用性的考虑，防止窗口缩小时中间栏消失 */	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.left&#123;</div><div class="line">	background: #ccc;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -100%;</div><div class="line">&#125;</div><div class="line">.main&#123;</div><div class="line">	width: 100%;</div><div class="line">	float: left;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	background: #fcc;</div><div class="line">	width: 150px;</div><div class="line">	height: 50px;</div><div class="line">	float: left;</div><div class="line">	margin-left: -150px;</div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">	background: #9cf;</div><div class="line">	height: 100px;</div><div class="line">	margin-left: 200px;</div><div class="line">	margin-right: 150px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Main的宽度100%，left和right定宽，我们设为经典的200px,150px,三者都加浮动，<code>float: left;</code>此时由于main宽度为100%,所以left和right上不去，浮在它下面（注意给父级清浮动）<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_1.png" alt=""><br>为left栏设置<code>margin-left: -100%;</code>为右边栏设置 <code>margin-left: -150px;</code> 此时左右栏浮上去了，但是盖在main的上面,会遮住Main的内容<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_2.png" alt=""><br>再在新加的类名为inner的div上设置<code>margin-left: 200px; margin-right: 150px;</code> 给出两边栏的宽度即可得到双飞翼布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/shuangfeiyi_3.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80.html" target="_blank" rel="external">demo演示</a><br>与圣杯布局的实现不同在于：</p>
+<ul>
+<li>双飞翼布局的HTML结构多了一个div(.inner)，这个div是加给main内层的</li>
+<li>不需要父级div的padding，不需要左右栏的相对定位，只需要浮动和margin负值</li>
+</ul>
+<h4 id="3-等高布局"><a href="#3-等高布局" class="headerlink" title="3.等高布局"></a>3.等高布局</h4><p>布局要求：<br>多列的高度保持一致，任一列的高度变化，其他列也变化</p>
+<h5 id="使用正的padding值和负的margin值对冲实现"><a href="#使用正的padding值和负的margin值对冲实现" class="headerlink" title="使用正的padding值和负的margin值对冲实现"></a>使用正的padding值和负的margin值对冲实现</h5><p>在所有列中使用正的padding-bottom和负的margin-bottom，在所有列外面加上一个div，并设置这个div的overflow:hiden把溢出背景切掉即可得到等高布局，一般会把padding的margin的值设的很大。原理可以参见<a href="">负margin原理</a>。<br>这个方法的缺陷是，那就是如果要实现每列四周有边框效果，那么每列的底部（或顶部）将无法有边框效果。</p>
+<p>为所有列加浮动<code>float: left</code>，顺便加上5px的border后,情况如下：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_1.png" alt=""><br>现在为所有列加上<code>padding-bottom: 9999px;margin-bottom: -9999px;</code>变成了下面这样，等高布局就出来了<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_2.png" alt=""><br>当然，它的缺陷也出来了，底部边框不见了，加了那么大的padding值，父级还overflow了当然看不到了。<br>解决这个边框问题可以在每一列里面加上一个div，然后对这个div相对于所有列的父级div进行绝对定位，并设置高度和背景颜色模拟边框。这里的高度注意IE下的最小高度bug。这种方法需要依赖每一列的宽度。<br>还有一种方法是在所有列外面加一层div，并做一张边框背景图来模拟边框<br>我们采用第一种，进行相关操作后，变成了下面这样<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_3.png" alt=""><br>改变任一列的高度，可看到其他列也变化了<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao_4.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">	&lt;div class=&quot;box left&quot;&gt;</div><div class="line">    	页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        &lt;div class=&quot;bottom1&quot;&gt;&lt;/div&gt;&lt;!-- 模拟下边框 --&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box center&quot;&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        &lt;div class=&quot;bottom2&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box right&quot;&gt;</div><div class="line">    	页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        页面内容&lt;br/&gt;</div><div class="line">        &lt;div class=&quot;bottom3&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">.wrap&#123;</div><div class="line">    width:800px;</div><div class="line">    margin:0 auto;</div><div class="line">    overflow:hidden;</div><div class="line">    position: relative;/* 因为模拟边框要相对于这里绝对定位 */</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">    float:left;</div><div class="line">    padding-bottom:10000px;</div><div class="line">    margin-bottom:-10000px;   </div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">    width:200px;</div><div class="line">    background: #6fa8dc;</div><div class="line">    border: 5px solid #333;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">    width:200px;</div><div class="line">    background:#ffd966;</div><div class="line">    border: 5px solid #888;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">    width:300px;</div><div class="line">    background: #93c47d;</div><div class="line">    border: 5px solid #ccc;</div><div class="line">&#125;</div><div class="line">/* 以下是模拟边框部分 */</div><div class="line">.bottom1&#123;</div><div class="line">    position: absolute;</div><div class="line">    bottom: 0;</div><div class="line">    left: 0px;</div><div class="line">    width: 210px;</div><div class="line">    height: 5px;</div><div class="line">    background: #333;</div><div class="line">    overflow: hidden; /*解决IE下最小高度 */</div><div class="line">&#125;</div><div class="line">.bottom2&#123;</div><div class="line">    position: absolute;</div><div class="line">    bottom: 0;</div><div class="line">    left: 210px;</div><div class="line">    width: 210px;</div><div class="line">    height: 5px;</div><div class="line">    background: #888;  </div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div><div class="line">.bottom3&#123;</div><div class="line">    position: absolute;</div><div class="line">    bottom: 0;</div><div class="line">    left: 420px;</div><div class="line">    width: 310px;</div><div class="line">    height: 5px;</div><div class="line">    background: #ccc; </div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/%E7%AD%89%E9%AB%98%E5%B8%83%E5%B1%801.html" target="_blank" rel="external">demo演示</a></p>
+<h5 id="2-使用边框模仿等高列，并不是真的等高列"><a href="#2-使用边框模仿等高列，并不是真的等高列" class="headerlink" title="2.使用边框模仿等高列，并不是真的等高列"></a>2.使用边框模仿等高列，并不是真的等高列</h5><p>这种方法比较适合两列或者三列，主要思路是将left列的border-right设成right列的宽度，并设置该边框的颜色与right列的背景色相同,而列的父级div的背景颜色设置为与列left的背景色相同。具体实现还要用到浮动与margin负值。这种方法感觉也有许多局限性，但是兼容性没问题</p>
+<p>为所有列加浮动<code>float: left</code><br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao2_1.png" alt=""><br>将left列的border-right设成right列的宽度，并设置margin-right为border-right的负值，此时已经可以实现left列高度变化时right列高度也变化<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao2_2.png" alt=""><br>再将父级div的背景色设为left列的背景色，以便实现right列高度变化时left列也变化，就完成了视觉上的等高布局<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao2_3.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">	&lt;div class=&quot;left&quot;&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	</div><div class="line">	&lt;div class=&quot;right&quot;&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">		页面内容&lt;br&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.wrap&#123;</div><div class="line">	width: 800px;</div><div class="line">	margin: 0 auto;</div><div class="line">	background: #0ff;</div><div class="line">	overflow: hidden;</div><div class="line">&#125;</div><div class="line">.left&#123;</div><div class="line">	width: 300px;</div><div class="line">	border-right: 500px solid #666;</div><div class="line">	margin-right: -500px;</div><div class="line">	background: #0ff;</div><div class="line">	float: left;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 500px;</div><div class="line">	background: #666;</div><div class="line">	float: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/%E7%AD%89%E9%AB%98%E5%B8%83%E5%B1%802.html" target="_blank" rel="external">demo演示</a></p>
+<h5 id="3-利用背景嵌套与相对定位（固定布局）"><a href="#3-利用背景嵌套与相对定位（固定布局）" class="headerlink" title="3.利用背景嵌套与相对定位（固定布局）"></a>3.利用背景嵌套与相对定位（固定布局）</h5><p>这种方法的实现的原则是：任何div元素的最大高度来撑大其他的div容器高度。看下面的原理图<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao3_1.png" alt=""><br>不管哪一列的高度最高，外面那三层背景的高度都会随最高列变化而变化，从而实现视觉上的等高布局<br>背景层的宽度均为100%，从第二层背景div开始用相对定位往左偏移出自身右边的列的宽度。<br>背景层相对定位后会溢出，所以最外层容器还要加overflow，而且每一列还要相对定位，偏移量为最近父级的溢出宽度，相对定位完后再浮动到同一行。<br>这种方法是不需要借助其他东西（javascript,背景图等）,而是纯CSS和HTML实现的等高列布局，并且能兼容所有浏览器（包括IE6），并且可以很容易创建任意列数。有多少列就要有多少层背景div。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">	&lt;div class=&quot;rightWrap wrap&quot;&gt;</div><div class="line">		&lt;div class=&quot;centerWrap wrap&quot;&gt;</div><div class="line">			&lt;div class=&quot;leftWrap wrap&quot;&gt;</div><div class="line">				&lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;</div><div class="line">				&lt;div class=&quot;center&quot;&gt;center&lt;/div&gt;</div><div class="line">				&lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">	width: 960px;</div><div class="line">	margin: 0 auto;</div><div class="line">&#125;</div><div class="line">.rightWrap&#123;</div><div class="line">	width: 100%;</div><div class="line">	background: green;/* right列的背景色 */</div><div class="line">	/* center和left列的背景色会在左边溢出，所以加overflow: hidden隐藏; 顺便可以清浮动*/</div><div class="line">	overflow: hidden; </div><div class="line">	/* IE6下子元素有相对定位时，overflow是包不住的，所以给父级加定位解决*/</div><div class="line">	position: relative;</div><div class="line"></div><div class="line">&#125;</div><div class="line">.centerWrap&#123;</div><div class="line">	width: 100%;</div><div class="line">	background: yellow;/* center列的背景色 */</div><div class="line">	position: relative;</div><div class="line">	/* 相对于自身向左偏移出right列的宽度*/</div><div class="line">	right: 320px;</div><div class="line">	float: left;/* 清浮动 */</div><div class="line">&#125;</div><div class="line">.leftWrap&#123;</div><div class="line">	width: 100%;</div><div class="line">	background: pink; /* left列的背景色 */</div><div class="line">	position: relative;</div><div class="line">	/* 相对于自身向左偏移出center列的宽度,由于父级centerWrap定位偏移了right的宽度，</div><div class="line">	所以leftWrap也跟着移动了。此时只需偏移center的宽度就可以了 */</div><div class="line">	right: 420px;</div><div class="line">	float: left;/* 清浮动 */</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 由于父级leftWrap的宽度是100%也就是960px,相对定位完后，有740px(320px+420px)溢出了，所以每一列需要相对自身右移740px,再对每一列设置浮动以并到同一行 */</div><div class="line">.left&#123;</div><div class="line">	width: 220px;</div><div class="line">	position: relative;</div><div class="line">	left: 740px;</div><div class="line">	float: left;</div><div class="line">&#125;</div><div class="line">.center&#123;</div><div class="line">	width: 420px;</div><div class="line">	position: relative;</div><div class="line">	left: 740px;</div><div class="line">	float: left;</div><div class="line">&#125;</div><div class="line">.right&#123;</div><div class="line">	width: 320px;</div><div class="line">	position: relative;</div><div class="line">	left: 740px;</div><div class="line">	float: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/denggao3_2.png" alt=""></p>
+<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/css%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/%E7%AD%89%E9%AB%98%E5%B8%83%E5%B1%803.html" target="_blank" rel="external">demo演示</a></p>
+<h5 id="4-利用背景嵌套与相对定位（适应布局）"><a href="#4-利用背景嵌套与相对定位（适应布局）" class="headerlink" title="4.利用背景嵌套与相对定位（适应布局）"></a>4.利用背景嵌套与相对定位（适应布局）</h5><p>将上面那个方法中的宽度改为百分比形式即可</p>
+<h5 id="5-使用背景图片，在列的父元素上使用这个背景图进行Y轴的铺放，从而实现一种等高列的假像"><a href="#5-使用背景图片，在列的父元素上使用这个背景图进行Y轴的铺放，从而实现一种等高列的假像" class="headerlink" title="5.使用背景图片，在列的父元素上使用这个背景图进行Y轴的铺放，从而实现一种等高列的假像"></a>5.使用背景图片，在列的父元素上使用这个背景图进行Y轴的铺放，从而实现一种等高列的假像</h5><h5 id="6-使用display-table系列模拟表格实现等高列"><a href="#6-使用display-table系列模拟表格实现等高列" class="headerlink" title="6.使用display: table系列模拟表格实现等高列"></a>6.使用display: table系列模拟表格实现等高列</h5>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML-CSS/" rel="tag">#HTML/CSS</a>
+          
+            <a href="/tags/布局/" rel="tag">#布局</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/25/神奇的margin负值/" rel="next" title="神奇的margin负值">
+                <i class="fa fa-chevron-left"></i> 神奇的margin负值
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/03/z-index的那些事/" rel="prev" title="z-index的那些事">
+                z-index的那些事 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/25/CSS经典布局/"
+     data-title="CSS经典布局回顾"
+     data-content=""
+     data-url="http://Cccshine.github.io/2016/07/25/CSS经典布局/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/25/CSS经典布局/"
+           data-title="CSS经典布局回顾" data-url="http://Cccshine.github.io/2016/07/25/CSS经典布局/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/icon.jpg"
+               alt="Cshine" />
+          <p class="site-author-name" itemprop="name">Cshine</p>
+          <p class="site-description motion-element" itemprop="description">Full of passion for life</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#圣杯布局（经典三列布局）"><span class="nav-number">1.</span> <span class="nav-text">圣杯布局（经典三列布局）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-利用浮动，margin负值，相对定位，一个额外div包住这三栏"><span class="nav-number">1.1.</span> <span class="nav-text">1.利用浮动，margin负值，相对定位，一个额外div包住这三栏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-利用相对父级绝对定位，margin值，一个额外div包住这三栏"><span class="nav-number">1.2.</span> <span class="nav-text">2.利用相对父级绝对定位，margin值，一个额外div包住这三栏</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-双飞翼布局"><span class="nav-number">2.</span> <span class="nav-text">2.双飞翼布局</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#利用浮动，margin负值，两个额外的div"><span class="nav-number">2.1.</span> <span class="nav-text">利用浮动，margin负值，两个额外的div</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-等高布局"><span class="nav-number">3.</span> <span class="nav-text">3.等高布局</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用正的padding值和负的margin值对冲实现"><span class="nav-number">3.1.</span> <span class="nav-text">使用正的padding值和负的margin值对冲实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-使用边框模仿等高列，并不是真的等高列"><span class="nav-number">3.2.</span> <span class="nav-text">2.使用边框模仿等高列，并不是真的等高列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-利用背景嵌套与相对定位（固定布局）"><span class="nav-number">3.3.</span> <span class="nav-text">3.利用背景嵌套与相对定位（固定布局）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-利用背景嵌套与相对定位（适应布局）"><span class="nav-number">3.4.</span> <span class="nav-text">4.利用背景嵌套与相对定位（适应布局）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-使用背景图片，在列的父元素上使用这个背景图进行Y轴的铺放，从而实现一种等高列的假像"><span class="nav-number">3.5.</span> <span class="nav-text">5.使用背景图片，在列的父元素上使用这个背景图进行Y轴的铺放，从而实现一种等高列的假像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-使用display-table系列模拟表格实现等高列"><span class="nav-number">3.6.</span> <span class="nav-text">6.使用display: table系列模拟表格实现等高列</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cshine</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<br>本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"cccshine"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://Cccshine.github.io/2016/07/23/meta标签详解/index.html">
 <meta property="og:site_name" content="Cshine">
 <meta property="og:description" content="简介The &amp;lt;meta&amp;gt; tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。meta标签常用于定">
-<meta property="og:updated_time" content="2016-08-03T06:03:47.876Z">
+<meta property="og:updated_time" content="2016-08-03T14:16:22.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="meta标签详解">
 <meta name="twitter:description" content="简介The &amp;lt;meta&amp;gt; tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。meta标签常用于定">
@@ -100,8 +100,8 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -226,8 +226,6 @@
             
 
   <div id="posts" class="posts-expand">
-    #render方法第二个参数is_index为是否为首页
-    #第三个参数is_pv为我们刚才设置的是否显示计数
     
 
   
@@ -301,8 +299,8 @@
       
 
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>The <code>&lt;meta&gt;</code> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.<br>关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。<br>meta标签常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。 </p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ol>
+        <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>The <code>&lt;meta&gt;</code> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.<br>关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。<br>meta标签常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。<br><a id="more"></a></p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ol>
 <li><p>name属性<br>name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。<code>&lt;meta name=&quot;参数&quot;content=&quot;具体的描述&quot;&gt;</code></p>
 <p> name属性共有以下几种参数：</p>
 <ul>
@@ -383,9 +381,9 @@
 <li><p><strong>Set-Cookie(cookie设定)</strong>: 如果网页过期。那么这个网页存在本地的cookies也会被自动删除</p>
 </li>
 </ul>
-<h3 id="使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）"><a href="#使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）" class="headerlink" title="使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）"></a>使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</h3><p>随着社交网络的不断发展，meta标签被赋予新的功能,用了meta property=og标签，就是你同意了网页内容可以被其他社会化网站引用等，目前这种协议被SNS网站如Fackbook、renren采用。<br>Facebook的Open Graph允许你指定你的内容如何在用户时间表上显示。这些标签可以让你检查你的数据是使用Insights如何共享在Facebook上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta property=&quot;og:title&quot; content=&quot;The best site&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:image&quot; content=&quot;link_to_image&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:description&quot; content=&quot;description goes here&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）"><a href="#使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）" class="headerlink" title="使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）"></a>使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</h4><p>随着社交网络的不断发展，meta标签被赋予新的功能,用了meta property=og标签，就是你同意了网页内容可以被其他社会化网站引用等，目前这种协议被SNS网站如Fackbook、renren采用。<br>Facebook的Open Graph允许你指定你的内容如何在用户时间表上显示。这些标签可以让你检查你的数据是使用Insights如何共享在Facebook上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta property=&quot;og:title&quot; content=&quot;The best site&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:image&quot; content=&quot;link_to_image&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:description&quot; content=&quot;description goes here&quot; /&gt;</div></pre></td></tr></table></figure></p>
 <p>与Open Graph相似的还有Twitter的Twitter cards(使用name=”twitter:title”或者name=”twitter:url”)以及Google+使用的Schema.org(使用itemscope和itemprop)。Open Graph已变得非常受欢迎，所以大多数社交网络默认都是Open Graph。</p>
-<h3 id="借鉴文章："><a href="#借鉴文章：" class="headerlink" title="借鉴文章："></a>借鉴文章：</h3><p><a href="http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html" target="_blank" rel="external">http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html</a><br><a href="http://www.tuicool.com/articles/A7j2QjF" target="_blank" rel="external">http://www.tuicool.com/articles/A7j2QjF</a><br><a href="http://www.cnblogs.com/wangjz1991/p/5326224.html" target="_blank" rel="external">http://www.cnblogs.com/wangjz1991/p/5326224.html</a></p>
+<h4 id="借鉴文章："><a href="#借鉴文章：" class="headerlink" title="借鉴文章："></a>借鉴文章：</h4><p><a href="http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html" target="_blank" rel="external">http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html</a><br><a href="http://www.tuicool.com/articles/A7j2QjF" target="_blank" rel="external">http://www.tuicool.com/articles/A7j2QjF</a><br><a href="http://www.cnblogs.com/wangjz1991/p/5326224.html" target="_blank" rel="external">http://www.cnblogs.com/wangjz1991/p/5326224.html</a></p>
 
       
     </div>
@@ -441,6 +439,25 @@
 
 
     <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/23/meta标签详解/"
+     data-title="meta标签详解"
+     data-content=""
+     data-url="http://Cccshine.github.io/2016/07/23/meta标签详解/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
   </div>
@@ -509,7 +526,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -538,7 +555,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）"><span class="nav-number">3.</span> <span class="nav-text">使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借鉴文章："><span class="nav-number">4.</span> <span class="nav-text">借鉴文章：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）"><span class="nav-number">3.</span> <span class="nav-text">使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#借鉴文章："><span class="nav-number">4.</span> <span class="nav-text">借鉴文章：</span></a></li></ol></div>
             
           </div>
         </section>
@@ -571,12 +588,12 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+<br>本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
 您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
 
         
@@ -640,13 +657,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>

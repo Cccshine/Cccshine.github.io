@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -99,8 +99,8 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -301,8 +301,115 @@
       
         
           
+            <p>z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~</p>
+<h4 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h4><p>看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;red&quot;&gt;Red&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;green&quot;&gt;Green&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;blue&quot;&gt;Blue&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="Stacking-Order"><a href="#Stacking-Order" class="headerlink" title="Stacking Order"></a>Stacking Order</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/25/CSS经典布局/" itemprop="url">
+                  CSS经典布局回顾
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T19:32:50+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/25/CSS经典布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/CSS经典布局/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
+
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="圣杯布局（经典三列布局）"><a href="#圣杯布局（经典三列布局）" class="headerlink" title="圣杯布局（经典三列布局）"></a>圣杯布局（经典三列布局）</h4><p>布局要求：<br>1、三列布局，中间宽度自适应，两边定宽；<br>2、中间栏要在浏览器中优先展示渲染；（所以html中中间栏写在左右栏前面)<br>3、允许任意列的高度最高；<br>4、要求只用一个额外的DIV标签；<br>5、要求用最简单的CSS、最少的HACK语句；<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/25/CSS经典布局/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -402,44 +509,12 @@
 
       
         
-          
-            <h3 id="margin负值的原理"><a href="#margin负值的原理" class="headerlink" title="margin负值的原理"></a>margin负值的原理</h3><h4 id="1-负边距在普通文档流中的作用和效果"><a href="#1-负边距在普通文档流中的作用和效果" class="headerlink" title="1.负边距在普通文档流中的作用和效果"></a>1.负边距在普通文档流中的作用和效果</h4><p>那些没有脱离文档流的元素（指非浮动元素、非绝对定位、非固定定位的元素等），其在页面中的位置是随着文档流的变化而变化的。<br>如下图所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/normal_1.png" alt="normal_1"><br><strong>负边距对这些由文档流控制的元素的作用是</strong>：会使它们在文档流中的位置发生偏移，但这种偏移不同于相对定位。<br>通过相对定位偏移后，它偏移前占据的空间仍然被它占据，不会让文档流的其它元素乘虚而入。<br>而通过负边距进行偏移的元素，它会放弃偏移前占据的空间，这样它后面文档流中的其它元素就会“流”过来填充这部分空间。<br>现在我们把上图中的block元素、inline元素以及inline-block元素都设一个负边距 margin:-10px;<br>看看会发生什么：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/normal_2.png" alt="normal_2"><br>上图中蓝色的block元素好像向左和向上都分别嵌入了浏览器窗口的边界里10px,然后block元素下面的文字也爬到了它身上，inline元素向左移动盖住了它前面的一个字，它后面的文字也有一部分覆盖在了它身上，inline-block的位置变化也很明显。<br>负的边距好像能减小元素在文档流中的尺寸一样，但事实上，它的尺寸大小并没变，只是文档流在计算元素位置的时候，会认为负边距把元素的尺寸减小了，元素的边界发生了变化，因此位置也就发生变化了。这只是打个很形象的比喻，帮助理解。要注意的是，文档流只能是后面的流向前面的，即文档流只能向左或向上流动，不能向下或向右移动。<br>简而言之，在普通文档流中，元素的最终<strong>边界</strong>是由margin决定的，margin为负的时候就相当于元素的边界向里收，文档流认的只是这个边界，不会管你实际的尺寸是多少,对于margin的top,right,bottom,left负值都是如此，margin的top和left负值表现为元素向上向左位移（因为上边界向下、左边界向右收了），而margin的right和bottom负值对自身的显示没有什么影响，但是它后面的元素会爬到它的身上（因为右边界边界向左、下边界向上收了）。<a href="">多列等高布局</a>可以利用这个实现</p>
-<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E6%99%AE%E9%80%9A%E6%96%87%E6%A1%A3%E6%B5%81.html" target="_blank" rel="external">demo演示</a></p>
-<h4 id="2-左右负边距对元素宽度的影响"><a href="#2-左右负边距对元素宽度的影响" class="headerlink" title="2.左右负边距对元素宽度的影响"></a>2.左右负边距对元素宽度的影响</h4><p>负边距不仅能影响元素在文档流中的位置，还能增加元素的宽度！<br>这个作用能实现的<strong>前提</strong>是：该元素没有设定width属性或width:auto。<br>来看下面的例子:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">	&lt;div class=&quot;box1&quot;&gt;我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度我没有设置宽度&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">	width: 500px;</div><div class="line">	margin: 100px auto;</div><div class="line">	border: 10px solid red;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">	background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>此时情况如下所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence1.png" alt=""><br>添加<code>margin-right；-20px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence2.png" alt=""><br>添加<code>margin-left；-20px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence3.png" alt=""><br>可以看到负的margin使得未设置宽度的元素的宽度发生了变化,超出了父元素。我们顺便来看看此时上下负margin的情况</p>
-<p>添加<code>margin-top；-10px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_4.png" alt=""><br>添加<code>margin-bottom；-10px;</code>后，变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_5.png" alt=""><br>最终的box1与container的位置关系如下图所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_6.png" alt=""><br>可以看到，margin-top为负值不会增加高度，会改变元素的最终边界，从而产生向上位移，此处向下收了10px从而向上移动了10px,父元素container设置的border也是10px,所以刚好遮住了;<br>而margin-bottom为负值不会位移,而是会改变元素的最终边界，此处向上收了10px,所以导致父元素container的高度也减少了10px,刚好设置的border也是10px,所以刚好遮住了</p>
-<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%AF%B9%E8%87%AA%E8%BA%AB%E5%AE%BD%E5%BA%A6%E5%BD%B1%E5%93%8D.html" target="_blank" rel="external">demo演示</a></p>
-<h4 id="3-负边距对浮动元素的影响"><a href="#3-负边距对浮动元素的影响" class="headerlink" title="3.负边距对浮动元素的影响"></a>3.负边距对浮动元素的影响</h4><p>负边距对浮动元素的影响与负边距对文档流中元素的影响其实是差不多的。文档流中元素的位置由文档流的走向决定，浮动的元素也可以看成有一个“浮动流”存在，不过浮动流既可以向左，也可以向右。<br>来看下面的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;div class=&quot;box box1&quot;&gt;box1&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box box2&quot;&gt;box2&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;box box3&quot;&gt;box3&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">	width: 400px;</div><div class="line">	height: 200px;</div><div class="line">	margin: 50px auto;</div><div class="line">	border: 5px solid red;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">	float: left;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">	background: blue;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">	background: green;</div><div class="line">&#125;</div><div class="line">.box3&#123;</div><div class="line">	background: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>此时情况如下所示：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_7.png" alt=""><br>给它们都设一个<code>margin-right:-50px;</code>,变为下图：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_8.png" alt=""><br>3个box的右边界都收了50px,后面的box叠到了前面的box上</p>
-<p>再看缩小父元素container宽度为220px后的情况：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_9.png" alt=""><br>此时由于宽度不够box3掉下来了</p>
-<p>我们给box3单独设一个<code>margin-left:-80px;</code>看看会怎么样<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_10.png" alt=""><br>看~它上去了，并且盖住了box2的80px，因为box3的左边界向右收了80px，所以它占据的宽度只有20px,这样父元素的宽度够容纳box3，于是它就上去了。<br>现在将box3的设为<code>margin-left:-100px;</code>：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_11.png" alt=""><br>此时box3完全盖住box2<br>现在将box3的设为<code>margin-left:-200px;</code>：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_12.png" alt=""><br>此时box3完全盖住box1，box2又出现了<br>所以负margin会改变浮动元素的显示位置，某个元素虽然是写在了后面，但可以通过负边距让它在浏览器显示的时候是在前面的。<a href="">圣杯布局</a>、<a href="">双飞翼布局</a>都是利用这个原理实现的。</p>
-<p><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E8%B4%9F%E8%BE%B9%E8%B7%9D%E5%AF%B9%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%E7%9A%84%E5%BD%B1%E5%93%8D.html" target="_blank" rel="external">demo演示</a></p>
-<h4 id="负边距对绝对定位元素的影响"><a href="#负边距对绝对定位元素的影响" class="headerlink" title="负边距对绝对定位元素的影响"></a>负边距对绝对定位元素的影响</h4><p>绝对定位的元素定义的top、right、bottom、left等值是元素自身的边界到最近的已定位的祖先元素的距离，这个元素自身的边界指的就是margin定义的边界，所以，如果margin为正的时候，那它的边界是向外扩的，如果margin为负的时候，则它的边界是向里收的。利用这点，就有了经典的利用绝对定位来居中的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;absolute&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.absolute&#123;</div><div class="line">	position: absolute;</div><div class="line">    top:50%;</div><div class="line">    left:50%;</div><div class="line">    height: 200px;</div><div class="line">    width: 200px;</div><div class="line">    background-color: blue;</div><div class="line">    margin-top: -100px;</div><div class="line">    margin-left: -100px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样就实现了如下所示的水平垂直居中：<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/influence_13.png" alt=""><br><a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%AF%B9%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%BD%B1%E5%93%8D.html" target="_blank" rel="external">demo演示</a></p>
-<h3 id="margin负值的应用"><a href="#margin负值的应用" class="headerlink" title="margin负值的应用"></a>margin负值的应用</h3><ul>
-<li><a href="">圣杯布局</a></li>
-<li><a href="">双飞翼布局</a></li>
-<li><a href="">多列等高布局</a></li>
-<li>水平垂直居中（上文有实现方法）</li>
-<li><p>去除列表最右边的边距<br>我们经常会使用浮动列表展示信息，为了美观通常为每个列表之间设置一定的间距（<code>margin-right</code>）,当父元素的宽度固定式，靠近右边边界的子元素就不应该有正向的margin-right了，否则这一行就容纳的子元素个数就会少一个，去除的方法通常是为最右端的li添加class，设置<code>margin-right:0;</code> ,如果这些子元素是在模板中通过循环动态输出的，那在循环的时候还得判断哪些子元素是靠近右边边界的，如果是就加上一个class。这时就会很麻烦，所以解决办法是加大子元素的父容器的宽度，可以在css里直接增大父容器宽度，外层container再overflow即可，但是利用负margin也可以实现这种效果：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;container&quot;&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">	    &lt;li&gt;子元素1&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素2&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素3&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素4&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素5&lt;/li&gt;</div><div class="line">	    &lt;li&gt;子元素6&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">.container&#123;</div><div class="line">      width:320px;</div><div class="line">      height:210px;</div><div class="line">      margin: 30px auto;</div><div class="line">      border:5px solid #000;</div><div class="line">      /*overflow: hidden;*/</div><div class="line">&#125;</div><div class="line">  .container ul&#123; </div><div class="line">  	  margin-right: -10px;/* 相当于宽度增加10px*/</div><div class="line">     overflow: hidden;</div><div class="line">     zoom :1;</div><div class="line">     /*width: 330px;*/</div><div class="line">  &#125;</div><div class="line">.container ul li&#123;</div><div class="line">   width:100px;</div><div class="line">   height:100px;</div><div class="line">   float:left;</div><div class="line">   margin-right:10px;</div><div class="line">   margin-bottom:10px;</div><div class="line">   background:#06c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  <img src="http://7xwrfa.com1.z0.glb.clouddn.com/apply_1.png" alt=""><br>  <a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8E%BB%E9%99%A4%E6%9C%80%E5%90%8E%E7%9A%84border-bottom.html" target="_blank" rel="external">demo演示</a></p>
-</li>
-<li><p>去除列表最后一个li元素的border-bottom<br>列表中我们经常会添加border-bottom值，最后一个li的border-bottom往往会与外边框重合，视觉上不雅观，往往要移除,很简单只需要对li的设置<code>margin-bottom:-边框值</code>,父元素再<code>overflow: hidden</code>即可.同理该方法稍微改动一下还可以处理border-right等</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;list&quot;&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">       &lt;li&gt;Test&lt;/li&gt;</div><div class="line">   &lt;/ul&gt;</div></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.list&#123;</div><div class="line">      width:390px;</div><div class="line">      margin:50px auto;</div><div class="line">      background:#F4F8FC;</div><div class="line">      border-radius:3px;</div><div class="line">      border:2px solid #D7E2EC;</div><div class="line">      overflow: hidden;</div><div class="line">  &#125;</div><div class="line">  .list li&#123;</div><div class="line">      height:25px;</div><div class="line">      line-height:25px;</div><div class="line">      padding:5px;</div><div class="line">      border-bottom:1px dotted red;</div><div class="line">      margin-bottom: -1px;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<p> <img src="http://7xwrfa.com1.z0.glb.clouddn.com/apply_2.png" alt=""><br>  <a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%8E%BB%E9%99%A4%E6%9C%80%E5%90%8E%E7%9A%84border-bottom.html" target="_blank" rel="external">demo演示</a> </p>
-</li>
-<li>图片与文字对齐问题<br>图片与文字默认是居底对齐了。所以当图片与文字在一起的时候往往都是不对齐的。尤其图片较小时就更加明显了，我看到很多人使用vertical-align:middle;对齐。在火狐下效果是不错，但是IE下，虽然是效果好了些，但还是不够。<br>如果，图片是个20像素*20像素左右的小图片，文字也差不多12px大，则使用vertical-align:text-bottom;是不错的个方法。还有个屡试不爽，兼容性不错的方法就是使用margin负值了。img标签是个很不错的标签，支持margin四个方向的正的和负的定位。一般img标签打头的小图标与文字对齐的话，<code>img{margin:0 3px -3px 0;}</code>可以说是公式版的东西，能实现效果和兼容性俱佳的对齐效果。<br>  <a href="http://7xwrfa.com1.z0.glb.clouddn.com/%E5%9B%BE%E7%89%87%E4%B8%8E%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90.html" target="_blank" rel="external">demo演示</a> </li>
-</ul>
-
-          
+          <h4 id="margin负值的原理"><a href="#margin负值的原理" class="headerlink" title="margin负值的原理"></a>margin负值的原理</h4><h5 id="1-负边距在普通文档流中的作用和效果"><a href="#1-负边距在普通文档流中的作用和效果" class="headerlink" title="1.负边距在普通文档流中的作用和效果"></a>1.负边距在普通文档流中的作用和效果</h5><p>那些没有脱离文档流的元素（指非浮动元素、非绝对定位、非固定定位的元素等），其在页面中的位置是随着文档流的变化而变化的。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/25/神奇的margin负值/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -539,94 +614,12 @@
 
       
         
-          
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>The <code>&lt;meta&gt;</code> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.<br>关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。<br>meta标签常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。 </p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ol>
-<li><p>name属性<br>name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。<code>&lt;meta name=&quot;参数&quot;content=&quot;具体的描述&quot;&gt;</code></p>
-<p> name属性共有以下几种参数：</p>
-<ul>
-<li><p><strong> keywords(关键字) </strong>:用于告诉搜索引擎，你网页的关键字。</p>
-</li>
-<li><p><strong> description(网站内容的描述) </strong>: 用于告诉搜索引擎，你网站的主要内容。</p>
-</li>
-<li><p><strong> viewport(移动端的窗口) </strong>: 用于指定在移动设备上页面的布局视口如何设置</p>
-</li>
-<li><p><strong> robots(定义搜索引擎爬虫的索引方式) </strong>:用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。 具体参数含义如下：</p>
-<ol>
-<li>all : 搜索引擎将索引此网页与继续通过此网页的链接索引，等价于index，follow。</li>
-<li>none : 搜索引擎将忽略此网页，等价于noindex，nofollow。</li>
-<li>index : 搜索引擎索引此网页。</li>
-<li>noindex : 搜索引擎不索引此网页。</li>
-<li>follow : 搜索引擎继续通过此网页的链接索引搜索其它的网页。</li>
-<li>nofollow: 搜索引擎不继续通过此网页的链接索引搜索其它的网页。</li>
-</ol>
-</li>
-<li><p><strong> author(作者) </strong>:用于标注网页作者</p>
-</li>
-<li><p><strong> generator </strong>:用以说明生成工具，可以废弃</p>
-</li>
-<li><p><strong> copyright(版权) </strong>:用于标注版权信息</p>
-</li>
-<li><p><strong> revisit-after(搜索引擎爬虫重访时间) </strong>:如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问</p>
-</li>
-<li><p><strong> renderer(双核浏览器渲染方式) </strong>:renderer是为双核浏览器准备的，用于指定双核浏览器默认以何种方式渲染页面。</p>
-</li>
-<li><p>在过去，搜索引擎是靠meta标签，如标题（title）、描述（description）甚至关键字（keywords）来索引网页页面的。某些网站已经开始滥用它们了，在页面中塞满众多著名的关键词，目的在于获得一个更好的搜索结果。Google在2009年就宣布在搜索算法中不再使用元关键词或者描述来得出排名（Ranking）了。但是百度中文搜索引擎算法则是考虑关键词标签作为算法的一个重要因素。</p>
-</li>
-<li><p>一个人在点击你的链接之前是会在搜索结果中先看到页面的描述，这个也说明，应该添加上meta描述，方便用户去阅读而不仅仅是为了方便网络机器人去查找。</p>
-</li>
-</ul>
-</li>
-<li><p>http-equiv属性<br>http-equiv属性可用于模拟一个 HTTP 响应头。把 content 属性连接到一个 HTTP 头部<br><code>&lt;meta http-equiv=&quot;参数&quot; content=&quot;具体的描述&quot;&gt;</code></p>
-<p> http-equiv属性主要有以下几种参数:</p>
-</li>
-</ol>
-<ul>
-<li><p><strong>content-Type(设定网页字符集，推荐使用HTML5的方式)</strong>:用于设定网页字符集，便于浏览器解析与渲染页面<br>  <code>&lt;meta charset=&quot;utf-8&quot;&gt; //HTML5的方式</code></p>
-</li>
-<li><p><strong>X-UA-Compatible(浏览器采取何种版本渲染当前页面)</strong>：IE8的专用标记,是用来指定Internet Explorer 8 浏览器模拟某个特定版本IE浏览器的渲染方式，以此来解决IE浏览器的兼容问题。<br>  <code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;/&gt;</code></p>
-<p>  Google开发了一个Google Chrome Frame「Google Chrome 浏览器内嵌框架 – GCF,使用GCF可以让用户的IE浏览器外观不变，但用户在浏览网页时实际上使用的是Chrome的内核，并且支持Windows XP及以上系统的IE6/7/8。</p>
-<p>  所以上段代码可解释为：如果安装了GCF，则使用GCF来渲染页面「”chrome=1”」，如果没有安装GCF，则使用最高版本的IE内核进行渲染「”IE=edge”」。</p>
-<p>  在w3.org的html5验证工具会报错，需要针对三种主流服务器在服务器端配置http equiv规则:</p>
-<ol>
-<li><p>apache服务器<br> 确保 mod_headers 和 mod_setenvif 是available的，然后在httpd.conf「新版Apache的配置文件是 apache2.conf」或者在.htaccess中加入以下规则：</p>
- <figure class="highlight plain"><figcaption><span>mod_setenvif.c></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;IfModule mod_headers.c&gt;</div><div class="line">BrowserMatch chromeframe gcf</div><div class="line">Header append X-UA-Compatible &quot;chrome=1&quot; env=gcf</div><div class="line">&lt;/IfModule &gt;</div><div class="line">&lt;/IfModule &gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Windows Server在IIS7或者更高版本的服务器<br>只需要修改web.config文件,添加如下信息即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;system.webServer&gt;</div><div class="line">&lt;httpProtocol&gt;</div><div class="line">&lt;customHeaders&gt;</div><div class="line">&lt;add name = &quot;X-UA-Compatible&quot; value = &quot;chrome=1&quot; /&gt;</div><div class="line">&lt;/customHeaders&gt;</div><div class="line">&lt;/httpProtocol&gt;</div><div class="line">&lt;/system.webServer&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在Nginx服务器中，只需要找到 ginxconf ginx.conf并编辑，在server { }区域里（最好是闭合符前面起一行）添加下列代码即可:<br><code>add_header &quot;X-UA-Compatible&quot; &quot;IE=Edge, chrome=1&quot;;</code></p>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><strong>cache-control(指定请求和响应遵循的缓存机制)</strong>: <ol>
-<li>用法1：指导浏览器如何缓存某个响应以及缓存多长时间<br> content具体参数如下：<ol>
-<li>no-cache: 先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。</li>
-<li>no-store: 不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）</li>
-<li>public : 缓存所有响应，但并非必须。因为max-age也可以做到相同效果</li>
-<li>private : 只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）</li>
-<li>maxage : 表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如：max-age=60表示响应可以再缓存和重用 60 秒。</li>
-</ol>
-</li>
-<li>用法2：禁止百度自动转码<br> 用于禁止当前页面在移动端浏览时，被百度自动转码。虽然百度的本意是好的，但是转码效果很多时候却不尽人意。所以可以在head中加入下列代码，就可以避免百度自动转码了<br> <code>&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot; /&gt;</code></li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p><strong>expires(网页到期时间)</strong>: 用于设定网页的到期时间，过期后网页必须到服务器上重新传输</p>
-</li>
-<li><p><strong>refresh(自动刷新并指向某页面)</strong>: 网页将在设定的时间内，自动刷新并调向设定的网址</p>
-</li>
-<li><p><strong>Set-Cookie(cookie设定)</strong>: 如果网页过期。那么这个网页存在本地的cookies也会被自动删除</p>
-</li>
-</ul>
-<h3 id="使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）"><a href="#使用社交媒体（Open-Graph、Twitter-Cards-和-Schema-org）" class="headerlink" title="使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）"></a>使用社交媒体（Open Graph、Twitter Cards 和 Schema.org）</h3><p>随着社交网络的不断发展，meta标签被赋予新的功能,用了meta property=og标签，就是你同意了网页内容可以被其他社会化网站引用等，目前这种协议被SNS网站如Fackbook、renren采用。<br>Facebook的Open Graph允许你指定你的内容如何在用户时间表上显示。这些标签可以让你检查你的数据是使用Insights如何共享在Facebook上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta property=&quot;og:title&quot; content=&quot;The best site&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:image&quot; content=&quot;link_to_image&quot; /&gt;</div><div class="line">&lt;meta property=&quot;og:description&quot; content=&quot;description goes here&quot; /&gt;</div></pre></td></tr></table></figure></p>
-<p>与Open Graph相似的还有Twitter的Twitter cards(使用name=”twitter:title”或者name=”twitter:url”)以及Google+使用的Schema.org(使用itemscope和itemprop)。Open Graph已变得非常受欢迎，所以大多数社交网络默认都是Open Graph。</p>
-<h3 id="借鉴文章："><a href="#借鉴文章：" class="headerlink" title="借鉴文章："></a>借鉴文章：</h3><p><a href="http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html" target="_blank" rel="external">http://www.w3cplus.com/css/meta-tags-html-basics-best-practices.html</a><br><a href="http://www.tuicool.com/articles/A7j2QjF" target="_blank" rel="external">http://www.tuicool.com/articles/A7j2QjF</a><br><a href="http://www.cnblogs.com/wangjz1991/p/5326224.html" target="_blank" rel="external">http://www.cnblogs.com/wangjz1991/p/5326224.html</a></p>
-
-          
+          <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>The <code>&lt;meta&gt;</code> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.<br>关键词metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。<br>meta标签常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/23/meta标签详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -726,58 +719,13 @@
 
       
         
-          
-            <h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
+          <h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
 <li><p><strong> 块中的文字或图片水平居中 </strong>：<br>text-align 会对块元素(或者display:block的元素）中的所有内联内容水平居中，可以继承，它里面所有的文字或者图片，都会相对于最靠近自己的块状父元素来实现居中。但对块状子元素是没用的，不能实现块状子元素在块状父元素中整体居中。该属性只能在块元素上设置，在内联元素上不起作用。（IE6，7对块状也有效）</p>
-</li>
-<li><p><strong> 块状元素自身水平居中（定宽）</strong>：margin: 0 auto  ，但是不能作用于浮动元素</p>
-</li>
-<li><p><strong> 块状元素自身水平居中（不定宽）</strong>：</p>
-<ul>
-<li>没有明确设定宽度的block元素，根据块级元素的性质，它默认是独占一行的，所以这个时候block元素本身就是浏览器窗口的宽度或者父级元素的宽度，就不必要来设置水平居中了。</li>
-<li>若是此时对块中的内联内容进行居中的话，则可以采用text-align</li>
-<li>若是此时对块中的块状内容进行居中的话，则可以采用margin（定宽），也可以采用display:inline后用text-align（不定宽）</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p><strong> 浮动配合相对定位来进行浮动元素水平居中（不需要知道宽度） </strong>：<br>通过给父元素设置 float left，然后给父元素设置 position:relative 和 left:50%，子元素设置 position:relative 和 left:-50% 来实现水平居中；为了避免父元素设置position:relative带来一些负作用，需要在要居中的元素外面再加上一层父元素专门用来设置而不影响原来的父元素</p>
-</li>
-<li><p><strong> 使用绝对定位（必须知道宽度） </strong>：<br>绝对定位进行居中的原理是通过把这个绝对定位元素的left或right属性设为50%,这个时候元素并不是居中的，而是比居中的位置向右或向左偏了这个元素宽度的一半的距离，所以需要使用一个负的margin-left或margin-right的值来把它拉回到居中的位置，这个负的margin值就取元素宽度的一半。</p>
-</li>
-<li><p><strong>text-align结合绝对定位及负margin值实现水平居中（需要知道宽度） </strong>：</p>
-<ul>
-<li>没有应用left、top等属性值的absolute元素就是个不占据空间的普通元素，如果是block水平的，换行显示；如果是inline水平的，跟在前面的文字后面显示。</li>
-<li>text-align属性作用于文字等inline(或inline-block)元素</li>
-<li>结合以上两点，可在absolute元素的标签前面加上&nbsp;，absolute元素的父元素设置text-align:center.此时absolute元素沿着父元素的中线显示（实际上由于&nbsp;会占据像素值，所以是偏中线3~4px),再利用margin-left: - (“1/2个元素宽度” + 2)即可实现</li>
-<li>这是一种方法，但是很少用到</li>
-</ul>
-</li>
-</ul>
-<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
-<li><p><strong> 父元素高度确定的单行文本/图片 </strong>：<br>通过设置父元素的 height 和 line-height 高度一致来实现的。最好使用相对单位（em/%)定义你的 height 和 line-height，这样当字体大小变化时，height能相应变化不想毁了你的布局的话，overflow: hidden 一定要加上，否则文字溢出将会破坏其他布局（IE中不支持img的垂直居中）</p>
-</li>
-<li><p><strong> 块级元素中的多行文字图片垂直居中（不定高） </strong>：<br>通过设置上下内边距padding相等<br>同时支持块级元素和内联元素，支持所有浏览器</p>
-</li>
-<li><p><strong> 使用绝对定位（必须知道高度） </strong>：<br>绝对定位进行居中的原理是通过把这个绝对定位元素的top或bottom属性设为50%,这个时候元素并不是居中的，而是比居中的位置向下或向上偏了这个元素高度的一半的距离，所以需要使用一个负的margin-top或margin-bottom的值来把它拉回到居中的位置，这个负的margin值就取元素高度的一半。</p>
-</li>
-<li><p><strong> 加入table标签实现垂直居中 </strong>：<br>为需要居中的元素的外面加上<code>&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;</code>标签，td标签默认情况下就默认设置了vertical-align 为 middle，所以可以不需要显式地设置。</p>
-</li>
-<li><p><strong> 使用display: table-cell </strong><br>将父元素以表格形式渲染，即可激活vertical-align属性<br>和一个合法的<code>&lt;td&gt;</code>元素必须在<code>&lt;table&gt;</code>里一样，display: table-cell 元素必须作为 display: table 的元素的子孙出现,IE不支持</p>
-</li>
-</ul>
-<h3 id="其他居中"><a href="#其他居中" class="headerlink" title="其他居中"></a>其他居中</h3><ul>
-<li><strong> 实现水平垂直居中 </strong>：<ul>
-<li>使用绝对定位（必须知道高度和宽度），利用上面提到的两者结合即可</li>
-<li>另一种使用绝对定位的方式（必须知道高度和宽度）： height: 100px; width: 100px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin:auto;但是此方法只只支持IE9+,谷歌，火狐等符合w3c标准的现代浏览器。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong> 宽高未知的img水平垂直居中 </strong>：<br>为父级加<code>text-align: center</code>以水平居中，img加<code>vertical-align: middle</code> 后，还要对其他内联元素也加vertical-align才能垂直居中，<a href="">(关于vertical-align可以参看这篇文章)</a>如果没有其他内联元素，可以添加高度为100%的空span元素，并display: inline-block.</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/19/CSS的居中/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -877,35 +825,15 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li><strong> 流体布局（liquid layout） </strong>：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式</li>
 <li><strong> 冻结布局（frozen layout） </strong>：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度</li>
 <li><p><strong> 凝胶布局(jello layout) </strong>:内容的宽度是固定的，但是外边距会随着浏览器窗口扩展或收缩(设置为auto)通常会把内容放在中央，会美观一些，其他与冻结布局类似</p>
-</li>
-<li><p><strong>层模式布局 </strong>：利用position属性的四个值定位 static，absolute，fixed，relative；</p>
-<ol>
-<li>static：   默认方式，元素放在页面的正常流中</li>
-<li>absolute：一个元素变成了绝对定位元素，这个元素就完全脱离正常文档流了，绝对定位元素的前面或者后面的元素会认为这个元素并不存在，即这个元素浮于其他元素上面，它是独立出来的。<ul>
-<li>可以将元素放在页面的任何位置，默认是相对于页面边界来放置，若是嵌套在另一个定位元素内，则是相对于这个外包含元素定位。（绝对元素的宽度不是必须要设定的）   。    </li>
-<li>会使内联元素支持宽高，块元素内容撑开宽度.   </li>
-</ul>
-</li>
-<li>fixed：相对于视窗定位，页面滚动时不会移动 ，其他内容在这些固定元素下面正常滚动。<ul>
-<li>会使内联元素支持宽高，块元素内容撑开宽度。IE6不支持</li>
-</ul>
-</li>
-<li>relative: 元素首先正常流入页面，然后按指定的量偏移，是相对于正常流中该元素位置定位 ，而且偏移前的位置保留不动 。不会影响元素本身的特性，如果没有定位偏移量，对元素没有任何影响。</li>
-<li>无论是相对、绝对还是固定定位，当偏移量超出上面、左边浏览器窗体（或者说超出可视区域）的时候，超出的内容都会被隐藏；而超出下面和右边的时候，相对定位和固定定位会隐藏超出的部分内容，而绝对定位会出现滚动 条。 </li>
-<li>可以使用z-index属性分层放置，z-index越大，说明层次越高，当然它是可以设置负值的。 默认层次，后者高于前者.Z-index 仅能在定位元素上奏效</li>
-<li>相对定位与绝对定位的结合使用：Relative与Absolute组合使用,可以实现一个元素相对于其他元素进行定位，而不是相对于浏览器<br>需要定位的元素的父级元素设置为相对定位，自己本身设置为绝对定位即可</li>
-</ol>
-</li>
-<li><strong> 浮动布局 </strong>：浮动元素会从正常流中取出，浮动到左边或者右边，与绝对定位不同的内联元素会考虑浮动元素的边界，围绕着这个浮动元素 。浮动无法创建两个等高的列。</li>
-<li><strong>表格布局 </strong>：CSS display:table 使用一种类似表格的布局来表现结构中的内容，为页面增加的结构完全是为了支持这种布局，并没有为页面增加任何有含义的内容。经常用来实现多栏均匀布局。利用这种布局很容易实现完美对齐且等高的列，而且可以随着浏览器扩展和收缩。与HTML表格不同，HTML表格的、是建立数据的结构.   （在IE8以前不支持）</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/18/流体、浮动、层模式等布局比较/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1005,171 +933,16 @@
 
       
         
-          
-            <h4 id="内联元素-inline"><a href="#内联元素-inline" class="headerlink" title="内联元素(inline)"></a>内联元素(inline)</h4><ul>
+          <h4 id="内联元素-inline"><a href="#内联元素-inline" class="headerlink" title="内联元素(inline)"></a>内联元素(inline)</h4><ul>
 <li>和其他元素都在一行上；</li>
 <li>元素的高度、宽度及顶部和底部边距不可设置；可以设置垂直方向的padding和margin值，但是inline元素的margin和padding的垂直方向上不产生边距效果，即不影响布局；</li>
 <li>元素的宽度就是它包含的文字或图片的宽度，不可改变；</li>
-<li>代码换行被解析：换行写代码会被解析为一个空格，空格是字体大小的一半。</li>
-</ul>
-<h4 id="内联块状元素-inline-block"><a href="#内联块状元素-inline-block" class="headerlink" title="内联块状元素(inline-block)"></a>内联块状元素(inline-block)</h4><ul>
-<li>在CSS中通过display:inline-block对一个对象指定inline-block属性，简单来说就是将对象呈现为inline对象，但是 对象的内容作为block对象呈现，之后的内联对象会被排列在同一行内；</li>
-<li>和其他元素都在一行上；</li>
-<li>元素的高度、宽度、行高以及顶和底边距都可设置；</li>
-<li>代码换行被解析：换行写代码会被解析为一个空格（下面有讲如何解决该空格）。</li>
-</ul>
-<h4 id="块状元素-block"><a href="#块状元素-block" class="headerlink" title="块状元素(block)"></a>块状元素(block)</h4><ul>
-<li>每个块级元素都从新的一行开始，并且其后的元素也另起一行。（真霸道，一个块级元素独占一行）</li>
-<li>元素的高度、宽度、行高以及顶和底边距都可设置。</li>
-<li>元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。</li>
-</ul>
-<hr>
-<h4 id="问题：行内元素是否可以设置宽高？"><a href="#问题：行内元素是否可以设置宽高？" class="headerlink" title="问题：行内元素是否可以设置宽高？"></a>问题：行内元素是否可以设置宽高？</h4><ul>
-<li>替换元素可以，非替换元素不可以.</li>
-<li>替换元素：替换元素是浏览器根据元素的标签与属性来决定具体显示的内容。<code>&lt;img&gt;&lt;input&gt;&lt;textarea&gt;&lt;select&gt;&lt;object&gt;</code>都是替换元素</li>
-<li>非替换元素：(X)HTML 的大多数元素是不可替换元素，他们将内容直接告诉浏览器，将其显示出来。</li>
-<li><code>&lt;img&gt;和&lt;input&gt;</code>是替换元素，他们是有内在尺寸的。如果不设定宽高，会以默认宽高显示。需要注意的是，几乎所有的可替换元素都是行内元素。而行内元素中的非替换元素，如<code>&lt;a&gt; &lt;span&gt; &lt;em&gt; &lt;i&gt;</code>等元素是不可设定宽高的。</li>
-</ul>
-<hr>
-<h4 id="去除inline-block元素间间距的N种方法"><a href="#去除inline-block元素间间距的N种方法" class="headerlink" title="去除inline-block元素间间距的N种方法"></a>去除inline-block元素间间距的N种方法</h4><p>真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距,使用CSS更改非inline-block水平元素为inline-block水平，也会有该问题</p>
-<ol>
-<li><p><strong> 移除标签间空格 </strong><br> 元素间留白间距出现的原因就是标签段之间的空格，因此，去掉HTML中的空格，自然间距就木有了。考虑到代码可读性，显然连成一行的写法是不可取的，我们可以:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;space&quot;&gt;</div><div class="line">   	&lt;a href=&quot;#&quot;&gt;</div><div class="line">   	惆怅&lt;/a&gt;&lt;a href=&quot;#&quot;&gt;</div><div class="line">   	淡定&lt;/a&gt;&lt;a href=&quot;#&quot;&gt;</div><div class="line">   	热血&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;space&quot;&gt;</div><div class="line">    &lt;a href=&quot;##&quot;&gt;惆怅&lt;/a</div><div class="line">    &gt;&lt;a href=&quot;##&quot;&gt;淡定&lt;/a</div><div class="line">    &gt;&lt;a href=&quot;##&quot;&gt;热血&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;space&quot;&gt;</div><div class="line">    &lt;a href=&quot;##&quot;&gt;惆怅&lt;/a&gt;&lt;!--</div><div class="line">    --&gt;&lt;a href=&quot;##&quot;&gt;淡定&lt;/a&gt;&lt;!--</div><div class="line">    --&gt;&lt;a href=&quot;##&quot;&gt;热血&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong> 使用margin负值 </strong><br> margin负值的大小与上下文的字体和文字大小相关，由于外部环境的不确定性，以及最后一个元素多出的负margin值等问题，这个方法不适合大规模使用。</p>
-</li>
-<li><p><strong> 去掉闭合标签 </strong><br> HTML5中闭合标签都去掉即可</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;space&quot;&gt;</div><div class="line">    &lt;a href=&quot;##&quot;&gt;惆怅</div><div class="line">    &lt;a href=&quot;##&quot;&gt;淡定</div><div class="line">    &lt;a href=&quot;##&quot;&gt;热血</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p> 但是HTML4的最后一个不能去以便兼容IE</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;space&quot;&gt;</div><div class="line">    &lt;a href=&quot;##&quot;&gt;惆怅</div><div class="line">    &lt;a href=&quot;##&quot;&gt;淡定</div><div class="line">    &lt;a href=&quot;##&quot;&gt;热血&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong> 利用font-size: 0 </strong><br> 先设定子元素字体，再设置父元素font-size:0px;</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.space &#123;</div><div class="line">    font-size: 0;</div><div class="line">&#125;</div><div class="line">.space a &#123;</div><div class="line">    font-size: 12px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 该方法在IE下有1px的间距无法消除</p>
-</li>
-<li><p><strong> 使用letter-spacing/word-spacing </strong><br> 设置<strong> 父元素 </strong>letter-spacing或word-spacing为负值，要考虑字体，子元素有文字也要注意设置letter-spacing或word-spacing的值为0。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.space &#123;</div><div class="line">    letter-spacing: -3px;</div><div class="line">&#125;</div><div class="line">.space a &#123;</div><div class="line">    letter-spacing: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> Opera浏览器下有问题：最小间距1像素，letter-spacing过小就还原了。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.space &#123;</div><div class="line">    word-spacing: -6px;</div><div class="line">&#125;</div><div class="line">.space a &#123;</div><div class="line">    word-spacing: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> Chrome浏览器，可能看到的是间距依旧存在。确实是有该问题，原因不清楚，可以添加display: table;或display:inline-table;让Chrome浏览器也变得乖巧。</p>
-</li>
-<li><strong> 使用浮动 </strong></li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T15:19:50+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/18/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+<li>代码换行被解析：换行写代码会被解析为一个空格，空格是字体大小的一半。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/18/HTML元素分类/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1247,7 +1020,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1298,12 +1071,12 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+<br>本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
 您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
 
         
@@ -1367,13 +1140,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
 
