@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/image/10.png">
 <meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/image/10.png">
 <meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/image/10.png">
-<meta property="og:updated_time" content="2016-08-05T14:59:56.330Z">
+<meta property="og:updated_time" content="2016-08-06T12:38:34.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="框模型与视觉格式化模型">
 <meta name="twitter:description" content="今天在了解BFC的相关知识时，看到了视觉格式化模型这个内容，似乎以前没有怎么见过，于是去查了下W3C规范，一查就把自己搞晕了，一下块框，一下块级框，还有块容器框，粗略的看了一遍真是没太理解，于是决定仔细的将它琢磨一下。
@@ -472,8 +472,8 @@
 <li>在BFC中，框会从包含块的顶部开始，一个接一个地，垂直向下地摆放<br><code>我们常说block元素很霸道，会扩展到与父元素同宽，block元素会垂直排列，其实是因为BFC的约束。</code></li>
 <li>两个兄弟框之间的垂直距离由<code>margin</code>属性来决定。在同一个BFC中，相邻的块级框之间的垂直外边距会出现折叠。<br><code>常见的外边距折叠，其实并不是bug，而是由于BFC的约束。</code></li>
 <li>在BFC中，每个框的左外边距边要紧贴其包含块的左边(对于从左往右的格式化)，否则相反。即使在有浮动的情景下也是如此，除非框创建了一个新的BFC(在这种情况下该框可能会为了避开浮动框而变窄)。</li>
-<li>BFC的区域不会与float box重叠（<a href="">利用这个特性可以做自适应窗口大小</a>）</li>
-<li>计算BFC的高度时，浮动元素也参与计算（<a href="">清除浮动的原理</a>）<br><code>大家肯定知道overflow:hidden可以清浮动，哈哈，就是因为这个啦</code></li>
+<li>BFC的区域不会与float box重叠（<a href="https://cccshine.github.io/2016/08/04/%E7%90%86%E8%A7%A3CSS%E4%B8%AD%E7%9A%84BFC/#more">利用这个特性可以做自适应窗口大小</a>）</li>
+<li>计算BFC的高度时，浮动元素也参与计算（<a href="https://cccshine.github.io/2016/08/04/%E7%90%86%E8%A7%A3CSS%E4%B8%AD%E7%9A%84BFC/#more">清除浮动的原理</a>）<br><code>大家肯定知道overflow:hidden可以清浮动，哈哈，就是因为这个啦</code></li>
 <li>下列情况将创建一个BFC：<ul>
 <li>根元素</li>
 <li>浮动 (元素的 float 不为 none)</li>
@@ -485,7 +485,7 @@
 <li>弹性盒子 flex boxes (元素的 display: flex 或 inline-flex)</li>
 </ul>
 </li>
-<li>BFC的相关应用可以见另一篇文章<a href="">BFC的应用</a></li>
+<li>BFC的相关应用可以见另一篇文章<a href="https://cccshine.github.io/2016/08/04/%E7%90%86%E8%A7%A3CSS%E4%B8%AD%E7%9A%84BFC/#more">BFC的应用</a></li>
 </ul>
 <p><strong><span id="ifc">行格式化上下文<code>IFC</code></span></strong></p>
 <ul>
@@ -545,7 +545,7 @@
 <li>否则，如果元素是根元素，<code>display</code>值根据下面的表格进行设定，除了其在CSS2.1里面没有定义是否指定值<code>list-item</code>对应计算值<code>block</code>或者<code>list-item</code><br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/image/10.png" alt=""></li>
 <li>否则，<code>display</code> 的计算值为指定的值。<br><code>注意：此处的否则代表依次否定上一条，也就是说最后一条是排除了前面的所有条件的情况下。</code></li>
 </ul>
-<h5 id="分层的呈现-Layered-presentation"><a href="#分层的呈现-Layered-presentation" class="headerlink" title="分层的呈现 Layered presentation"></a>分层的呈现 Layered presentation</h5><p>主要是z-index属性，详见<a href="https://cccshine.github.io/2016/08/03/z-index%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/">z-index那些事</a></p>
+<h5 id="分层的呈现-Layered-presentation"><a href="#分层的呈现-Layered-presentation" class="headerlink" title="分层的呈现 Layered presentation"></a>分层的呈现 Layered presentation</h5><p>主要是z-index属性，详见<a href="https://cccshine.github.io/2016/08/03/z-index%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/#more">我想更了解z-index</a></p>
 <h5 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h5><p>写了这么多，虽然大部分是W3C规范里的内容，但是整个慢慢的看下来，自己也收获不小，文章里有一些自己的理解，因为经验尚且，可能会有错误，还请大家多多指教。里面有一些知识时穿插着的，所以建议先顺着看一遍理解一下，对于不懂的先放着，可能下文就有讲述，看完第一遍之后再看一遍以加深理解与印象。</p>
 <h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul>
 <li><a href="https://www.w3.org/html/ig/zh/wiki/CSS2/box#mpb-examples" target="_blank" rel="external">W3C/CSS2/box</a></li>

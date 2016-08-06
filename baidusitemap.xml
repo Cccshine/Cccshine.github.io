@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://Cccshine.github.io/2016/08/04/%E7%90%86%E8%A7%A3CSS%E4%B8%AD%E7%9A%84BFC/</loc>
-    <lastmod>2016-08-06T12:33:23.949Z</lastmod>
+    <lastmod>2016-08-06T12:39:13.451Z</lastmod>
     <data>
         <display>
         <title>BFC的应用</title>
@@ -16,6 +16,33 @@
         <tag>BFC</tag>
          
         <tag>IFC</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://Cccshine.github.io/2016/08/04/%E6%A1%86%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2016-08-06T12:38:34.735Z</lastmod>
+    <data>
+        <display>
+        <title>框模型与视觉格式化模型</title>
+        <pubTime>2016-08-04T11:41:15.000Z</pubTime>
+        
+        <tag>HTML/CSS</tag>
+         
+        <tag>框模型</tag>
+         
+        <tag>视觉格式化模型</tag>
+         
+        <tag>SPEC</tag>
+         
+        <tag>BFC</tag>
+         
+        <tag>外边距margin</tag>
          
          
            
@@ -42,33 +69,6 @@
 
     
   <url>
-    <loc>http://Cccshine.github.io/2016/08/04/%E6%A1%86%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2016-08-05T14:59:56.330Z</lastmod>
-    <data>
-        <display>
-        <title>框模型与视觉格式化模型</title>
-        <pubTime>2016-08-04T11:41:15.000Z</pubTime>
-        
-        <tag>HTML/CSS</tag>
-         
-        <tag>框模型</tag>
-         
-        <tag>视觉格式化模型</tag>
-         
-        <tag>SPEC</tag>
-         
-        <tag>BFC</tag>
-         
-        <tag>外边距margin</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://Cccshine.github.io/2016/07/25/CSS%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/</loc>
     <lastmod>2016-08-03T14:48:28.866Z</lastmod>
     <data>
@@ -76,9 +76,9 @@
         <title>CSS经典布局回顾</title>
         <pubTime>2016-07-25T11:32:50.000Z</pubTime>
         
-        <tag>HTML/CSS</tag>
-         
         <tag>布局</tag>
+         
+        <tag>HTML/CSS</tag>
          
          
            
@@ -95,9 +95,9 @@
         <title>流体 浮动 层模式布局比较</title>
         <pubTime>2016-07-18T14:23:05.000Z</pubTime>
         
-        <tag>HTML/CSS</tag>
-         
         <tag>布局</tag>
+         
+        <tag>HTML/CSS</tag>
          
          
            
@@ -114,9 +114,9 @@
         <title>CSS的居中</title>
         <pubTime>2016-07-18T16:02:31.000Z</pubTime>
         
-        <tag>HTML/CSS</tag>
-         
         <tag>布局</tag>
+         
+        <tag>HTML/CSS</tag>
          
          
            
