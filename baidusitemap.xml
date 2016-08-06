@@ -4,16 +4,18 @@
 
     
   <url>
-    <loc>http://Cccshine.github.io/2016/07/25/CSS%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/</loc>
-    <lastmod>2016-08-03T14:48:28.866Z</lastmod>
+    <loc>http://Cccshine.github.io/2016/08/04/%E7%90%86%E8%A7%A3CSS%E4%B8%AD%E7%9A%84BFC/</loc>
+    <lastmod>2016-08-06T12:33:23.949Z</lastmod>
     <data>
         <display>
-        <title>CSS经典布局回顾</title>
-        <pubTime>2016-07-25T11:32:50.000Z</pubTime>
+        <title>BFC的应用</title>
+        <pubTime>2016-08-04T03:19:51.000Z</pubTime>
         
         <tag>HTML/CSS</tag>
          
-        <tag>布局</tag>
+        <tag>BFC</tag>
+         
+        <tag>IFC</tag>
          
          
            
@@ -24,10 +26,10 @@
     
   <url>
     <loc>http://Cccshine.github.io/2016/08/03/z-index%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</loc>
-    <lastmod>2016-08-03T14:47:10.128Z</lastmod>
+    <lastmod>2016-08-06T12:28:38.543Z</lastmod>
     <data>
         <display>
-        <title>z-index的那些事</title>
+        <title>我想更了解z-index</title>
         <pubTime>2016-08-03T06:01:15.000Z</pubTime>
         
         <tag>HTML/CSS</tag>
@@ -40,14 +42,43 @@
 
     
   <url>
-    <loc>http://Cccshine.github.io/2016/07/18/HTML%E5%85%83%E7%B4%A0%E5%88%86%E7%B1%BB/</loc>
-    <lastmod>2016-08-03T14:28:28.711Z</lastmod>
+    <loc>http://Cccshine.github.io/2016/08/04/%E6%A1%86%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2016-08-05T14:59:56.330Z</lastmod>
     <data>
         <display>
-        <title>HTML元素分类</title>
-        <pubTime>2016-07-18T12:42:59.000Z</pubTime>
+        <title>框模型与视觉格式化模型</title>
+        <pubTime>2016-08-04T11:41:15.000Z</pubTime>
         
         <tag>HTML/CSS</tag>
+         
+        <tag>框模型</tag>
+         
+        <tag>视觉格式化模型</tag>
+         
+        <tag>SPEC</tag>
+         
+        <tag>BFC</tag>
+         
+        <tag>外边距margin</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://Cccshine.github.io/2016/07/25/CSS%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80/</loc>
+    <lastmod>2016-08-03T14:48:28.866Z</lastmod>
+    <data>
+        <display>
+        <title>CSS经典布局回顾</title>
+        <pubTime>2016-07-25T11:32:50.000Z</pubTime>
+        
+        <tag>HTML/CSS</tag>
+         
+        <tag>布局</tag>
          
          
            

@@ -84,19 +84,20 @@
 
 
 
-<meta name="description" content="z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~
-Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&amp;quot">
+<meta name="description" content="z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="z-index的那些事">
+<meta property="og:title" content="我想更了解z-index">
 <meta property="og:url" content="http://Cccshine.github.io/2016/08/03/z-index的那些事/index.html">
 <meta property="og:site_name" content="Cshine">
-<meta property="og:description" content="z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~
-Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&amp;quot">
-<meta property="og:updated_time" content="2016-08-03T14:47:10.128Z">
+<meta property="og:description" content="z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index1.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index2.png">
+<meta property="og:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index%E6%97%A0%E6%A0%87%E9%A2%98.png.png">
+<meta property="og:updated_time" content="2016-08-06T12:28:38.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="z-index的那些事">
-<meta name="twitter:description" content="z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~
-Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&amp;quot">
+<meta name="twitter:title" content="我想更了解z-index">
+<meta name="twitter:description" content="z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~">
+<meta name="twitter:image" content="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index1.png">
 
 
 
@@ -119,7 +120,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
 
   <link rel="canonical" href="http://Cccshine.github.io/2016/08/03/z-index的那些事/"/>
 
-  <title> z-index的那些事 | Cshine </title>
+  <title> 我想更了解z-index | Cshine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +250,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
             
             
               
-                z-index的那些事
+                我想更了解z-index
               
             
           </h1>
@@ -302,9 +303,57 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
       
 
       
-        <p>z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~</p>
-<h4 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h4><p>看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;red&quot;&gt;Red&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;green&quot;&gt;Green&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;blue&quot;&gt;Blue&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<h4 id="Stacking-Order"><a href="#Stacking-Order" class="headerlink" title="Stacking Order"></a>Stacking Order</h4>
+        <p>z-index是一个很常用的css属性，最初认为它的使用非常简单：positioned elements（除了static）设置z-index，z-index大的堆叠在z-index小的元素之上。在后面的学习与练习中便发现它并不是那么简单，于是去查阅了相关的资料，现在整理分享一波~<br><a id="more"></a></p>
+<h4 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a><span id="que">Questions</span></h4><p>先看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;first&quot;&gt;我是萌萌A&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;second&quot;&gt;我是萌萌B&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  &lt;span class=&quot;third&quot;&gt;我是萌萌C&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">.first, .second, .third &#123;</div><div class="line">  position: absolute;</div><div class="line">  height: 100px;</div><div class="line">  line-height: 100px;</div><div class="line">  width: 100px;</div><div class="line">  text-align: center;</div><div class="line">&#125;</div><div class="line">.first &#123;</div><div class="line">  top: 20px;</div><div class="line">  left: 20px;</div><div class="line">  background: #fdb;</div><div class="line">  z-index: 1;</div><div class="line">&#125;</div><div class="line">.second &#123;</div><div class="line">  top: 60px;</div><div class="line">  left: 60px;</div><div class="line">  background: #bda;</div><div class="line">&#125;</div><div class="line">.third &#123;</div><div class="line">  top: 100px;</div><div class="line">  left: 100px;</div><div class="line">  background: #9ac;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个结果大家应该是可以想象出来的，很普通的一个东东，就是下面这样,<a href="http://7xwrfa.com1.z0.glb.clouddn.com/Z-indexquestion1.html" target="_blank" rel="external">我是demo</a><br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index1.png" alt=""><br>显然这不是我们的问题，真正的问题要登场了<br><strong>在下列条件的约束下，你能让萌萌A到最后面去吗？</strong>也就是变成下图这样。</p>
+<ul>
+<li>不改变HTML结构</li>
+<li>不给任何元素添加或修改z-index属性，也就是保持萌萌A的<code>z-index:1</code>，其他任何元素的z-index为初始值auto</li>
+<li>不给任何元素添加或修改position属性<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index2.png" alt=""><br>想到方法了吗？如果你解决这个问题了，可以<a href="http://7xwrfa.com1.z0.glb.clouddn.com/Z-indexquestion2.html" target="_blank" rel="external">查看demo</a>，看看是否与我给的出的方法一致。如果没有解决，那就继续往下看。</li>
+</ul>
+<h4 id="堆叠顺序Stacking-Order"><a href="#堆叠顺序Stacking-Order" class="headerlink" title="堆叠顺序Stacking Order"></a>堆叠顺序Stacking Order</h4><p>每一个在HTML文档中的元素既可以在其他元素的前面，也可以在其他元素的后面。这就是所谓的堆叠顺序。决定这个顺序的规则被十分清楚的定义在[CSS规范]中。<br><strong>注意：此处的前面是指更接近用户因为用户面对屏幕</strong></p>
+<ul>
+<li>当没有涉及z-index和position时，这个堆叠顺序的规则相当简单：基本上，堆叠顺序和元素在HTML中出现的顺序一样。（当你使用负margin时可能会出现不同于这个规则的情况）</li>
+<li>当有position属性介入时，那么所有定位了的元素（包括他们的子元素）会在没有被定位的元素前面。（此处一个元素定位了的意思指的是它有一个position属性，但是不是static，而是relative,absolute等）</li>
+<li>在position属性介入的基础上，再加上z-index属性的介入时，情况就变得有些怪异了。通常我们会认为z-index值越大的元素会越靠前，任何设置了z-index值的元素会在没有设置的元素的前面。但是事实上绝不是如此简单。<ul>
+<li>首先，z-index属性只作用在被定位了的元素上。所以如果你在一个没被定位的元素上使用z-index的话，是不会有效果的。</li>
+<li>其次，z-index会创建一个堆叠上下文（Stacking Contexts），什么又是堆叠上下文呢？。</li>
+</ul>
+</li>
+</ul>
+<h4 id="堆叠上下文Stacking-Contexts"><a href="#堆叠上下文Stacking-Contexts" class="headerlink" title="堆叠上下文Stacking Contexts"></a>堆叠上下文Stacking Contexts</h4><p>关于堆叠上下文的定义，由于本人翻译水平有限，感觉翻译过来之后总有些不对。所以贴上英语原文如下:</p>
+<blockquote>
+<p>Groups of elements with a common parent that move forward or backward together in the stacking order make up what is known as a stacking context. </p>
+</blockquote>
+<p>我的理解是：考虑最简单的情况，如下结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&lt;div&gt;</div><div class="line">		&lt;p&gt;&lt;/p&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li&gt;&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">	&lt;p&gt;</div><div class="line">		&lt;span&gt;&lt;/span&gt;</div><div class="line">	&lt;/p&gt;</div><div class="line">	...</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>假设body的第一级子元素都创建了堆叠上下文</strong>（没有创建的时候就是一个普通的元素），当它们在堆叠顺序中向前或者向后移动时，会带着他们各自的子元素一起移动，我们可以想象将div（或ul或p）及其子元素p（或li或span）压缩成一个整体的层，<br>这个层就可以理解为堆叠上下文<code>Stacking Contexts</code>，堆叠上下文有堆叠顺序。<br>充分理解堆栈上下文是真正掌握z-index和堆叠顺序工作原理的关键。<br><img src="http://7xwrfa.com1.z0.glb.clouddn.com/Z-index%E6%97%A0%E6%A0%87%E9%A2%98.png.png" alt=""></p>
+<p>现在我们来说说什么情况下会产生新的堆叠上下文：</p>
+<ul>
+<li>当一个元素位于HTML文档的最外层（<html>元素）</html></li>
+<li>当一个元素被定位了并且拥有一个z-index值（不为auto）</li>
+<li>当一个元素被设置了opacity（值需要小于1），transforms, filters, css-regions, paged media等属性。堆叠顺序是z-index:auto可看成z:index:0级别<br>通常来讲，如果一个CSS属性需要做一些特效的话，它都会创建一个新的堆叠上下文。</li>
+</ul>
+<p>每一个堆叠上下文都有一个单独的HTML元素作为它的根元素。当一个新的堆叠上下文在一个元素E上形成时，那么它的所有子元素都会受到父元素（即元素E）的堆叠顺序影响。意味着如果一个元素位于一个离用户最远的堆叠上下文中，那你z-index设置得再大，哪怕是设为10亿，它也不会出现在其它堆叠上下文中的元素的前面。拿上面这张图解释就是，堆叠上下文C中的元素不可能出现在堆叠上下文A、B中的元素的前面。其实，说到这我深有体会，以前看一个元素就是不到别的元素前面来，我就加大z-index的值，可是毫无反应…..当时真是摸不着头脑。</p>
+<h4 id="用堆叠顺序决定一个元素的位置"><a href="#用堆叠顺序决定一个元素的位置" class="headerlink" title="用堆叠顺序决定一个元素的位置"></a>用堆叠顺序决定一个元素的位置</h4><p>影响堆叠顺序的因素有很多，想彻底了解它推荐你去看<a href="https://www.w3.org/TR/CSS2/zindex.html" target="_blank" rel="external">w3c规范</a>，这里是基本了解这个顺序，它能够在很长一段时间内帮助我们提高CSS开发的可预测性。</p>
+<p><strong>在同一堆叠上下文中的堆叠顺序</strong><br>下面是几条基本的规则，来决定在一个单独的堆叠上下文里的堆叠顺序（从远离用户到靠近用户）</p>
+<ul>
+<li>堆叠上下文的根元素（即创建堆叠上下文的元素）</li>
+<li>带着负z-index值的定位元素（和他们的子元素）（z-index高的值被堆叠在低值的前面；相同值的元素按照在HTML中出现的顺序堆叠）</li>
+<li>非定位元素（按照在HTML中出现的顺序排序）</li>
+<li>带着auto的z-index值的定位元素（和他们的子元素）（按照在HTML中出现的顺序排序）</li>
+<li>带着正z-index值的定位元素（和他们的子元素）（z-index高的值被堆叠在低值的前面；相同值的元素按照在HTML中出现的顺序堆叠）<br>注解：带有负的z-index值的定位元素在一个堆栈上下文中先排序，这意味着他们出现在所有其他元素的后面。正因如此，它使一个元素出现在自己父元素之后成为可能，这以前通常是不可能的事。当然，这局限于它的父元素与它在同一个堆栈上下文，并且不是那个堆栈上下文的根元素。一个伟大的例子如Nicolas Gallagher<a href="http://nicolasgallagher.com/css-drop-shadows-without-images/demo/" target="_blank" rel="external"> CSS drop-shadows without images.</a>。</li>
+</ul>
+<p><strong>全局堆叠顺序</strong><br>一个页面里可能会有很多个堆叠上下文，这些堆叠上下文也是有堆叠顺序的，堆叠上下文A在堆叠上下文B的前面，那么A中的元素就都会在B中的元素的前面，B中元素设置的z-index值再大也只会在B中有效，别的堆叠上下文根本不会知道你那么大。<br>理解了如何和什么时候会产生一个新的堆叠上下文，那么下次如果你遇到z-index值设了很大，但是不起作用的话就去看看它的祖先是否产生了一个新的堆叠上下文。</p>
+<p><strong>堆叠顺序的黄金准则</strong></p>
+<ul>
+<li>谁大谁上：当具有明显的堆叠顺序标示的时候，如识别的z-indx值，在同一个堆叠上下文领域，堆叠水平值大的那一个在小的那一个前面。</li>
+<li>后来居上：当元素的堆叠顺序相同的时候，在DOM流中处于后面的元素会覆盖前面的元素。</li>
+</ul>
+<h4 id="我们回到最初的Question"><a href="#我们回到最初的Question" class="headerlink" title="我们回到最初的Question"></a>我们回到最初的Question</h4><p>还记得最开始的问题吗？忘记了的话<a href="#que">点这里</a>回去看一下，最开始问题的解答是给萌萌A的父元素加上一个’opacity: 0.99’,<a href="http://7xwrfa.com1.z0.glb.clouddn.com/Z-indexquestion2.html" target="_blank" rel="external">戳demo看一下</a><br>相信你已经知道为什么加上这一句萌萌A就害羞的躲到最后面去了吧。<br>一开始有两个堆叠上下文，一个由根节点产生，一个由设置了z-index:1并且position:absolute的萌萌哒A产生。<br>当我们设置了opacity时，产生了第三个堆叠上下文，并且第三个堆叠上下文把萌萌哒A产生的堆叠上下文包裹了，意味着萌萌哒A的z-index只在第三个堆叠上下文里面起作用。<br>而所有的<code>&lt;div&gt;</code>都没有定位或者z-index，所以他们的堆叠顺序按照HTML出现顺序排列，于是第三个堆叠上下文就去到下面。</p>
+<h4 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h4><p>由于CSS3的出现，transforms, filters, css-regions, paged media等属性也可以创建堆叠上下文，情况变得有些许不一样。而我对CSS3并不是很熟悉，在此推荐张鑫旭前辈的博客，里面有一篇非常详细的，包含更多详情的相关文章，值得一看<a href="http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/" target="_blank" rel="external">深入理解CSS中的层叠上下文和层叠顺序</a></p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p>本文大部分为<a href="https://philipwalton.com/articles/what-no-one-told-you-about-z-index/" target="_blank" rel="external">What No One Told You About Z-Index</a>的译文，在该文章的基础上加入了一些自己的理解。</p>
+
       
     </div>
 
@@ -343,6 +392,10 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/08/04/理解CSS中的BFC/" rel="prev" title="BFC的应用">
+                BFC的应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -357,7 +410,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/08/03/z-index的那些事/"
-     data-title="z-index的那些事"
+     data-title="我想更了解z-index"
      data-content=""
      data-url="http://Cccshine.github.io/2016/08/03/z-index的那些事/">
   <div class="ds-share-inline">
@@ -387,7 +440,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/08/03/z-index的那些事/"
-           data-title="z-index的那些事" data-url="http://Cccshine.github.io/2016/08/03/z-index的那些事/">
+           data-title="我想更了解z-index" data-url="http://Cccshine.github.io/2016/08/03/z-index的那些事/">
       </div>
     
   </div>
@@ -432,7 +485,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -442,7 +495,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -471,7 +524,7 @@ Questions看下面的代码：123456789&amp;lt;div&amp;gt;  &amp;lt;span class=&
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Questions"><span class="nav-number">1.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stacking-Order"><span class="nav-number">2.</span> <span class="nav-text">Stacking Order</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Questions"><span class="nav-number">1.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆叠顺序Stacking-Order"><span class="nav-number">2.</span> <span class="nav-text">堆叠顺序Stacking Order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆叠上下文Stacking-Contexts"><span class="nav-number">3.</span> <span class="nav-text">堆叠上下文Stacking Contexts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用堆叠顺序决定一个元素的位置"><span class="nav-number">4.</span> <span class="nav-text">用堆叠顺序决定一个元素的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们回到最初的Question"><span class="nav-number">5.</span> <span class="nav-text">我们回到最初的Question</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更多"><span class="nav-number">6.</span> <span class="nav-text">更多</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
           </div>
         </section>
