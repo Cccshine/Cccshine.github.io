@@ -248,6 +248,236 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/23/JS知识点系列-基本类型与引用类型/" itemprop="url">
+                  JS知识点系列--基本类型与引用类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T21:12:12+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/23/JS知识点系列-基本类型与引用类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/JS知识点系列-基本类型与引用类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="变量的值类型"><a href="#变量的值类型" class="headerlink" title="变量的值类型"></a>变量的值类型</h3><p>变量可能包含两种不同数据类型的值：基本类型值（简单的 数据段）和引用类型值（可能由多个值构成的对象）</p>
+<h3 id="变量的存储"><a href="#变量的存储" class="headerlink" title="变量的存储"></a>变量的存储</h3><ul>
+<li>基本类型值在内存中占据固定大小空间，因此被保存在栈区； </li>
+<li>引用类型值是对象，引用类型的存储需要内存的栈区和堆区共同完成，栈区内存保存变量标识符和指向堆内存中该对象的指针，这个指针指向堆内存中的相应对象</li>
+</ul>
+<blockquote>
+<p>栈：由操作系统自动分配释放<br>堆： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收</p>
+</blockquote>
+<h3 id="变量的访问"><a href="#变量的访问" class="headerlink" title="变量的访问"></a>变量的访问</h3><p><em>五种基本数据类型是按值访问的，可以操作保存在变量中的实际的值
+</em>引用类型值 是保存在内存中 的对象，JS不允许直接访问内存中的位置，操作对象时实际上是在操作对象的引用而不是实际的对象，所以引用类型的值是按引用访问的（注意在为对象添加属性时操作的是实际的对象），当访问时，我们需要先从栈中读取内存地址，然后再顺藤摸瓜地找到保存在堆内存中的值</p>
+<h3 id="变量的复制"><a href="#变量的复制" class="headerlink" title="变量的复制"></a>变量的复制</h3><p><em>从一个变量num1向另一个变量num2复制 基本类型值；复制的是num1的值的一个副本，复制后这两个变量中的值是完全独立的
+</em>从一个变量向另一个变量复制引用类型的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj1 = new Object(); </div><div class="line">var obj2 = obj1;</div><div class="line">obj1.age = 18;</div><div class="line">console.log(obj2.age); // 输出18</div></pre></td></tr></table></figure></p>
+<p>通过上面两个小节应该已经了解引用类型值是怎么存储的，现在用上面的代码简单解释下<br>对象Object是被保存在堆中，obj1被保存在栈中，obj1存储的内容是一个指针，指向堆中的实际对象Object，也就是说obj1存储的值是实际对象Object的地址，所以这样实现了按引用访问。<br>从变量obj1向另一个变量obj2复制 引用类型值时，复制的是obj1的值，由上所述可知是指向实际对象Object的指针，所以赋值后，obj2存储的值也就是指向实际对象Object的指针。而实际对象Object只有一个，所以obj1、obj2都指向它，也就是obj1、obj2引用同一个对象Object<br>所以会出现改变obj1会影响obj2的现象</p>
+<p>传递参数<br>ECMAScript中所有的函数的参数 都是 <strong>按值传递</strong>，即使是引用类型值的传递也是按值传递</p>
+<ul>
+<li>传递基本类型值时，被传递的值会被复制给一个局部变量（即命名参数或者arguments中的一个元素）</li>
+<li>传递引用类型值时，由复变量的复制这一节已经知道，该值是一个指针，然后将其复制给一个局部变量（即命名参数或者arguments中的一个元素），这个局部变量再根据这个地址去按引用访问对象，因此这个局部变量的变化会反映在函数的外部。而不是因为它是按引用传递才导致局部变量的变化会反映在函数的外部。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/21/JS知识点系列-延迟脚本/" itemprop="url">
+                  JS知识点系列--延迟脚本
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-21T22:39:36+08:00" content="2016-09-21">
+              2016-09-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/21/JS知识点系列-延迟脚本/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/JS知识点系列-延迟脚本/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="脚本的下载与执行"><a href="#脚本的下载与执行" class="headerlink" title="脚本的下载与执行"></a>脚本的下载与执行</h2><p>我们知道无论 <code>JavaScript</code> 代码是内嵌形式还是在外链文件形式中，页面的下载和渲染都必须<strong>停</strong>下来等待脚本执行完成，即会出现页面阻塞（页面渲染和用户交互完全被阻塞），然后再继续解析和渲染页面。这是因为脚本可能会改变页面，这意味着它们对出现在脚本后面的页面的内容会造成影响，比如说<code>JavaScript</code>可能会向某个标签添加内容、可能会创建新的元素、可能会移除某个元素等都会对页面内容造成影响。</p>
+<p>而在脚本的执行过程中，用户只能等待，执行过程耗时越久，浏览器等待响应用户输入的时间就越长。</p>
+<h2 id="脚本位置的影响"><a href="#脚本位置的影响" class="headerlink" title="脚本位置的影响"></a>脚本位置的影响</h2><p><code>&lt;script&gt;</code> 标签可以放在 HTML 文档的<code>&lt;head&gt;</code>或<code>&lt;body&gt;</code>中，并允许出现多次。在 <code>&lt;head&gt;</code> 中加载外链的 JavaScript会导致严重的性能问题。<br>上面说到当浏览器解析到 <code>&lt;script&gt;</code> 标签时，浏览器会停止解析其后的内容，而优先下载脚本文件，并执行其中的代码，这意味着，如果 styles.css 样式文件放在<code>&lt;script&gt;</code>的后面，则styles.css 样式文件和<code>&lt;body&gt;</code>标签都无法被加载，由于<code>&lt;body&gt;</code>标签无法被加载，那么页面自然就无法渲染了,因此这将导致在该 JavaScript 代码<strong>完全执行完</strong>之前，页面都是一片空白，用户体验非常不好，一般我看到长时间的空白页面，我都非常想直接关闭它</p>
+<p>注：如果在<code>&lt;head&gt;</code>中有多个<code>JavaScript</code>文件，则它们是并行下载的，不需要等到一个下载执行完才开始下载下一个。但是，虽然如此，只要有脚本在下载在执行就会阻止页面渲染及其他文件的下载</p>
+<p>还有一点要注意，CSS 本来是可以并行下载的，但是当 CSS 后面跟着 JS 的时候，该 CSS 就会出现阻塞后面资源下载的情况。因为JS 代码在执行前，浏览器必须保证在此 JS 执行之前的所有 css（无论外链还是内嵌）都已下载和解析完成。这是 CSS 阻塞后续 JS 执行的根本原因。</p>
+<p>因此会推荐将所有<code>&lt;script&gt;</code>标签尽可能放到<code>&lt;body&gt;</code>标签的底部，以尽量减少对整个页面下载的影响，此时虽然一个脚本会阻塞另一个脚本，但是用户体验比上面的好很多，因为用户看到了大部分内容，而不是空白</p>
+<p>通常如果<code>JavaScript</code>文件有多个的话，应该通过离线的打包工具或者一些实时的在线服务来实现多个文件合并成一个，这样只需要引用一个<code>&lt;script&gt;</code>标签，就可以减少性能消耗<br>这是因为浏览器在解析 HTML 页面的过程中每遇到一个<code>&lt;script&gt;</code>标签，都会因执行脚本而导致一定的延时，所以最小化延迟时间将会明显改善页面的总体性能。而对于外链 JavaScript 文件而言，考虑到 HTTP 请求会带来额外的性能开销，因此下载单个 100Kb 的文件将比下载 5 个 20Kb 的文件更快。所以减少页面中外链脚本的数量将会改善性能。</p>
+<h2 id="实现无阻塞的脚本"><a href="#实现无阻塞的脚本" class="headerlink" title="实现无阻塞的脚本"></a>实现无阻塞的脚本</h2><p>Web 应用的功能越丰富，所需要的 JavaScript 代码就越多，尽管下载单个较大的 JavaScript 文件只产生一次 HTTP 请求，却会锁死浏览器的一大段时间。为避免这种情况，需要通过一些特定的技术向页面中<strong>逐步加载</strong> JavaScript 文件，这样做在某种程度上来说不会阻塞浏览器</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/07/仿天猫首页的总结/" itemprop="url">
                   仿天猫首页的总结
                 </a>
@@ -1074,117 +1304,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/流体、浮动、层模式等布局比较/" itemprop="url">
-                  流体 浮动 层模式布局比较
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:23:05+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/18/流体、浮动、层模式等布局比较/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li><strong> 流体布局（liquid layout） </strong>：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式</li>
-<li><strong> 冻结布局（frozen layout） </strong>：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度</li>
-<li><p><strong> 凝胶布局(jello layout) </strong>:内容的宽度是固定的，但是外边距会随着浏览器窗口扩展或收缩(设置为auto)通常会把内容放在中央，会美观一些，其他与冻结布局类似</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/18/流体、浮动、层模式等布局比较/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1223,7 +1349,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

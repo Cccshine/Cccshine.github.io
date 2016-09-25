@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML/CSS,布局," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,22 +84,34 @@
 
 
 
-<meta name="description" content="流体布局（liquid layout） ：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式
- 冻结布局（frozen layout） ：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度
- 凝胶布局(jello layout) :内容的宽度是固定的，但是外边距会随着浏览">
+<meta name="description" content="变量的值类型变量可能包含两种不同数据类型的值：基本类型值（简单的 数据段）和引用类型值（可能由多个值构成的对象）
+变量的存储
+基本类型值在内存中占据固定大小空间，因此被保存在栈区； 
+引用类型值是对象，引用类型的存储需要内存的栈区和堆区共同完成，栈区内存保存变量标识符和指向堆内存中该对象的指针，这个指针指向堆内存中的相应对象
+
+
+栈：由操作系统自动分配释放堆： 一般由程序员分配释放， 若程序员不释">
 <meta property="og:type" content="article">
-<meta property="og:title" content="流体 浮动 层模式布局比较">
-<meta property="og:url" content="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/index.html">
+<meta property="og:title" content="JS知识点系列--基本类型与引用类型">
+<meta property="og:url" content="http://Cccshine.github.io/2016/09/23/JS知识点系列-基本类型与引用类型/index.html">
 <meta property="og:site_name" content="Cshine">
-<meta property="og:description" content="流体布局（liquid layout） ：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式
- 冻结布局（frozen layout） ：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度
- 凝胶布局(jello layout) :内容的宽度是固定的，但是外边距会随着浏览">
-<meta property="og:updated_time" content="2016-08-03T14:28:02.184Z">
+<meta property="og:description" content="变量的值类型变量可能包含两种不同数据类型的值：基本类型值（简单的 数据段）和引用类型值（可能由多个值构成的对象）
+变量的存储
+基本类型值在内存中占据固定大小空间，因此被保存在栈区； 
+引用类型值是对象，引用类型的存储需要内存的栈区和堆区共同完成，栈区内存保存变量标识符和指向堆内存中该对象的指针，这个指针指向堆内存中的相应对象
+
+
+栈：由操作系统自动分配释放堆： 一般由程序员分配释放， 若程序员不释">
+<meta property="og:updated_time" content="2016-09-23T13:39:28.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="流体 浮动 层模式布局比较">
-<meta name="twitter:description" content="流体布局（liquid layout） ：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式
- 冻结布局（frozen layout） ：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度
- 凝胶布局(jello layout) :内容的宽度是固定的，但是外边距会随着浏览">
+<meta name="twitter:title" content="JS知识点系列--基本类型与引用类型">
+<meta name="twitter:description" content="变量的值类型变量可能包含两种不同数据类型的值：基本类型值（简单的 数据段）和引用类型值（可能由多个值构成的对象）
+变量的存储
+基本类型值在内存中占据固定大小空间，因此被保存在栈区； 
+引用类型值是对象，引用类型的存储需要内存的栈区和堆区共同完成，栈区内存保存变量标识符和指向堆内存中该对象的指针，这个指针指向堆内存中的相应对象
+
+
+栈：由操作系统自动分配释放堆： 一般由程序员分配释放， 若程序员不释">
 
 
 
@@ -120,9 +132,9 @@
 
 
 
-  <link rel="canonical" href="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/"/>
+  <link rel="canonical" href="http://Cccshine.github.io/2016/09/23/JS知识点系列-基本类型与引用类型/"/>
 
-  <title> 流体 浮动 层模式布局比较 | Cshine </title>
+  <title> JS知识点系列--基本类型与引用类型 | Cshine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +264,7 @@
             
             
               
-                流体 浮动 层模式布局比较
+                JS知识点系列--基本类型与引用类型
               
             
           </h1>
@@ -264,8 +276,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:23:05+08:00" content="2016-07-18">
-              2016-07-18
+            <time itemprop="dateCreated" datetime="2016-09-23T21:12:12+08:00" content="2016-09-23">
+              2016-09-23
             </time>
           </span>
 
@@ -275,8 +287,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/18/流体、浮动、层模式等布局比较/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/" itemprop="commentsCount"></span>
+                <a href="/2016/09/23/JS知识点系列-基本类型与引用类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/JS知识点系列-基本类型与引用类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,32 +317,23 @@
       
 
       
-        <ul>
-<li><strong> 流体布局（liquid layout） </strong>：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式</li>
-<li><strong> 冻结布局（frozen layout） </strong>：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度</li>
-<li><p><strong> 凝胶布局(jello layout) </strong>:内容的宽度是固定的，但是外边距会随着浏览器窗口扩展或收缩(设置为auto)通常会把内容放在中央，会美观一些，其他与冻结布局类似</p>
-<a id="more"></a>
-</li>
-<li><p><strong>层模式布局 </strong>：利用position属性的四个值定位 static，absolute，fixed，relative；</p>
-<ol>
-<li>static：   默认方式，元素放在页面的正常流中</li>
-<li>absolute：一个元素变成了绝对定位元素，这个元素就完全脱离正常文档流了，绝对定位元素的前面或者后面的元素会认为这个元素并不存在，即这个元素浮于其他元素上面，它是独立出来的。<ul>
-<li>可以将元素放在页面的任何位置，默认是相对于页面边界来放置，若是嵌套在另一个定位元素内，则是相对于这个外包含元素定位。（绝对元素的宽度不是必须要设定的）   。    </li>
-<li>会使内联元素支持宽高，块元素内容撑开宽度.   </li>
+        <h3 id="变量的值类型"><a href="#变量的值类型" class="headerlink" title="变量的值类型"></a>变量的值类型</h3><p>变量可能包含两种不同数据类型的值：基本类型值（简单的 数据段）和引用类型值（可能由多个值构成的对象）</p>
+<h3 id="变量的存储"><a href="#变量的存储" class="headerlink" title="变量的存储"></a>变量的存储</h3><ul>
+<li>基本类型值在内存中占据固定大小空间，因此被保存在栈区； </li>
+<li>引用类型值是对象，引用类型的存储需要内存的栈区和堆区共同完成，栈区内存保存变量标识符和指向堆内存中该对象的指针，这个指针指向堆内存中的相应对象</li>
 </ul>
-</li>
-<li>fixed：相对于视窗定位，页面滚动时不会移动 ，其他内容在这些固定元素下面正常滚动。<ul>
-<li>会使内联元素支持宽高，块元素内容撑开宽度。IE6不支持</li>
-</ul>
-</li>
-<li>relative: 元素首先正常流入页面，然后按指定的量偏移，是相对于正常流中该元素位置定位 ，而且偏移前的位置保留不动 。不会影响元素本身的特性，如果没有定位偏移量，对元素没有任何影响。</li>
-<li>无论是相对、绝对还是固定定位，当偏移量超出上面、左边浏览器窗体（或者说超出可视区域）的时候，超出的内容都会被隐藏；而超出下面和右边的时候，相对定位和固定定位会隐藏超出的部分内容，而绝对定位会出现滚动 条。 </li>
-<li>可以使用z-index属性分层放置，z-index越大，说明层次越高，当然它是可以设置负值的。 默认层次，后者高于前者.Z-index 仅能在定位元素上奏效</li>
-<li>相对定位与绝对定位的结合使用：Relative与Absolute组合使用,可以实现一个元素相对于其他元素进行定位，而不是相对于浏览器<br>需要定位的元素的父级元素设置为相对定位，自己本身设置为绝对定位即可</li>
-</ol>
-</li>
-<li><strong> 浮动布局 </strong>：浮动元素会从正常流中取出，浮动到左边或者右边，与绝对定位不同的内联元素会考虑浮动元素的边界，围绕着这个浮动元素 。浮动无法创建两个等高的列。</li>
-<li><strong>表格布局 </strong>：CSS display:table 使用一种类似表格的布局来表现结构中的内容，为页面增加的结构完全是为了支持这种布局，并没有为页面增加任何有含义的内容。经常用来实现多栏均匀布局。利用这种布局很容易实现完美对齐且等高的列，而且可以随着浏览器扩展和收缩。与HTML表格不同，HTML表格的、是建立数据的结构.   （在IE8以前不支持）</li>
+<blockquote>
+<p>栈：由操作系统自动分配释放<br>堆： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收</p>
+</blockquote>
+<h3 id="变量的访问"><a href="#变量的访问" class="headerlink" title="变量的访问"></a>变量的访问</h3><p><em>五种基本数据类型是按值访问的，可以操作保存在变量中的实际的值
+</em>引用类型值 是保存在内存中 的对象，JS不允许直接访问内存中的位置，操作对象时实际上是在操作对象的引用而不是实际的对象，所以引用类型的值是按引用访问的（注意在为对象添加属性时操作的是实际的对象），当访问时，我们需要先从栈中读取内存地址，然后再顺藤摸瓜地找到保存在堆内存中的值</p>
+<h3 id="变量的复制"><a href="#变量的复制" class="headerlink" title="变量的复制"></a>变量的复制</h3><p><em>从一个变量num1向另一个变量num2复制 基本类型值；复制的是num1的值的一个副本，复制后这两个变量中的值是完全独立的
+</em>从一个变量向另一个变量复制引用类型的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj1 = new Object(); </div><div class="line">var obj2 = obj1;</div><div class="line">obj1.age = 18;</div><div class="line">console.log(obj2.age); // 输出18</div></pre></td></tr></table></figure></p>
+<p>通过上面两个小节应该已经了解引用类型值是怎么存储的，现在用上面的代码简单解释下<br>对象Object是被保存在堆中，obj1被保存在栈中，obj1存储的内容是一个指针，指向堆中的实际对象Object，也就是说obj1存储的值是实际对象Object的地址，所以这样实现了按引用访问。<br>从变量obj1向另一个变量obj2复制 引用类型值时，复制的是obj1的值，由上所述可知是指向实际对象Object的指针，所以赋值后，obj2存储的值也就是指向实际对象Object的指针。而实际对象Object只有一个，所以obj1、obj2都指向它，也就是obj1、obj2引用同一个对象Object<br>所以会出现改变obj1会影响obj2的现象</p>
+<p>传递参数<br>ECMAScript中所有的函数的参数 都是 <strong>按值传递</strong>，即使是引用类型值的传递也是按值传递</p>
+<ul>
+<li>传递基本类型值时，被传递的值会被复制给一个局部变量（即命名参数或者arguments中的一个元素）</li>
+<li>传递引用类型值时，由复变量的复制这一节已经知道，该值是一个指针，然后将其复制给一个局部变量（即命名参数或者arguments中的一个元素），这个局部变量再根据这个地址去按引用访问对象，因此这个局部变量的变化会反映在函数的外部。而不是因为它是按引用传递才导致局部变量的变化会反映在函数的外部。</li>
 </ul>
 
       
@@ -354,9 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTML-CSS/" rel="tag">#HTML/CSS</a>
-          
-            <a href="/tags/布局/" rel="tag">#布局</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -365,13 +366,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/21/JS知识点系列-延迟脚本/" rel="next" title="JS知识点系列--延迟脚本">
+                <i class="fa fa-chevron-left"></i> JS知识点系列--延迟脚本
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/19/CSS的居中/" rel="prev" title="CSS的居中">
-                CSS的居中 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -386,10 +387,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/"
-     data-title="流体 浮动 层模式布局比较"
+        <div class="ds-share flat" data-thread-key="2016/09/23/JS知识点系列-基本类型与引用类型/"
+     data-title="JS知识点系列--基本类型与引用类型"
      data-content=""
-     data-url="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/">
+     data-url="http://Cccshine.github.io/2016/09/23/JS知识点系列-基本类型与引用类型/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -416,8 +417,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/"
-           data-title="流体 浮动 层模式布局比较" data-url="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/">
+      <div class="ds-thread" data-thread-key="2016/09/23/JS知识点系列-基本类型与引用类型/"
+           data-title="JS知识点系列--基本类型与引用类型" data-url="http://Cccshine.github.io/2016/09/23/JS知识点系列-基本类型与引用类型/">
       </div>
     
   </div>
@@ -501,7 +502,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的值类型"><span class="nav-number">1.</span> <span class="nav-text">变量的值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的存储"><span class="nav-number">2.</span> <span class="nav-text">变量的存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的访问"><span class="nav-number">3.</span> <span class="nav-text">变量的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的复制"><span class="nav-number">4.</span> <span class="nav-text">变量的复制</span></a></li></ol></div>
             
           </div>
         </section>

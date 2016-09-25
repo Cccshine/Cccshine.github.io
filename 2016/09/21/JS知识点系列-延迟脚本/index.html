@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML/CSS,布局," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="流体布局（liquid layout） ：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式
- 冻结布局（frozen layout） ：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度
- 凝胶布局(jello layout) :内容的宽度是固定的，但是外边距会随着浏览">
+<meta name="description" content="脚本的下载与执行我们知道无论 JavaScript 代码是内嵌形式还是在外链文件形式中，页面的下载和渲染都必须停下来等待脚本执行完成，即会出现页面阻塞（页面渲染和用户交互完全被阻塞），然后再继续解析和渲染页面。这是因为脚本可能会改变页面，这意味着它们对出现在脚本后面的页面的内容会造成影响，比如说JavaScript可能会向某个标签添加内容、可能会创建新的元素、可能会移除某个元素等都会对页面内容造成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="流体 浮动 层模式布局比较">
-<meta property="og:url" content="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/index.html">
+<meta property="og:title" content="JS知识点系列--延迟脚本">
+<meta property="og:url" content="http://Cccshine.github.io/2016/09/21/JS知识点系列-延迟脚本/index.html">
 <meta property="og:site_name" content="Cshine">
-<meta property="og:description" content="流体布局（liquid layout） ：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式
- 冻结布局（frozen layout） ：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度
- 凝胶布局(jello layout) :内容的宽度是固定的，但是外边距会随着浏览">
-<meta property="og:updated_time" content="2016-08-03T14:28:02.184Z">
+<meta property="og:description" content="脚本的下载与执行我们知道无论 JavaScript 代码是内嵌形式还是在外链文件形式中，页面的下载和渲染都必须停下来等待脚本执行完成，即会出现页面阻塞（页面渲染和用户交互完全被阻塞），然后再继续解析和渲染页面。这是因为脚本可能会改变页面，这意味着它们对出现在脚本后面的页面的内容会造成影响，比如说JavaScript可能会向某个标签添加内容、可能会创建新的元素、可能会移除某个元素等都会对页面内容造成">
+<meta property="og:updated_time" content="2016-09-25T12:44:04.863Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="流体 浮动 层模式布局比较">
-<meta name="twitter:description" content="流体布局（liquid layout） ：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式
- 冻结布局（frozen layout） ：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度
- 凝胶布局(jello layout) :内容的宽度是固定的，但是外边距会随着浏览">
+<meta name="twitter:title" content="JS知识点系列--延迟脚本">
+<meta name="twitter:description" content="脚本的下载与执行我们知道无论 JavaScript 代码是内嵌形式还是在外链文件形式中，页面的下载和渲染都必须停下来等待脚本执行完成，即会出现页面阻塞（页面渲染和用户交互完全被阻塞），然后再继续解析和渲染页面。这是因为脚本可能会改变页面，这意味着它们对出现在脚本后面的页面的内容会造成影响，比如说JavaScript可能会向某个标签添加内容、可能会创建新的元素、可能会移除某个元素等都会对页面内容造成">
 
 
 
@@ -120,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/"/>
+  <link rel="canonical" href="http://Cccshine.github.io/2016/09/21/JS知识点系列-延迟脚本/"/>
 
-  <title> 流体 浮动 层模式布局比较 | Cshine </title>
+  <title> JS知识点系列--延迟脚本 | Cshine </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +246,7 @@
             
             
               
-                流体 浮动 层模式布局比较
+                JS知识点系列--延迟脚本
               
             
           </h1>
@@ -264,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T22:23:05+08:00" content="2016-07-18">
-              2016-07-18
+            <time itemprop="dateCreated" datetime="2016-09-21T22:39:36+08:00" content="2016-09-21">
+              2016-09-21
             </time>
           </span>
 
@@ -275,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/18/流体、浮动、层模式等布局比较/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/" itemprop="commentsCount"></span>
+                <a href="/2016/09/21/JS知识点系列-延迟脚本/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/JS知识点系列-延迟脚本/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,33 +299,14 @@
       
 
       
-        <ul>
-<li><strong> 流体布局（liquid layout） </strong>：扩展浏览器窗口时，页面中的内容会扩展以适应页面,这是默认布局模式</li>
-<li><strong> 冻结布局（frozen layout） </strong>：内容的宽度是固定的，不会随着浏览器的窗口扩展或收缩。这个宽度是自己用width定义的。这种模式的好处是可以对设计提供更多的控制，代价是不能有效的使用浏览器的宽度</li>
-<li><p><strong> 凝胶布局(jello layout) </strong>:内容的宽度是固定的，但是外边距会随着浏览器窗口扩展或收缩(设置为auto)通常会把内容放在中央，会美观一些，其他与冻结布局类似</p>
-<a id="more"></a>
-</li>
-<li><p><strong>层模式布局 </strong>：利用position属性的四个值定位 static，absolute，fixed，relative；</p>
-<ol>
-<li>static：   默认方式，元素放在页面的正常流中</li>
-<li>absolute：一个元素变成了绝对定位元素，这个元素就完全脱离正常文档流了，绝对定位元素的前面或者后面的元素会认为这个元素并不存在，即这个元素浮于其他元素上面，它是独立出来的。<ul>
-<li>可以将元素放在页面的任何位置，默认是相对于页面边界来放置，若是嵌套在另一个定位元素内，则是相对于这个外包含元素定位。（绝对元素的宽度不是必须要设定的）   。    </li>
-<li>会使内联元素支持宽高，块元素内容撑开宽度.   </li>
-</ul>
-</li>
-<li>fixed：相对于视窗定位，页面滚动时不会移动 ，其他内容在这些固定元素下面正常滚动。<ul>
-<li>会使内联元素支持宽高，块元素内容撑开宽度。IE6不支持</li>
-</ul>
-</li>
-<li>relative: 元素首先正常流入页面，然后按指定的量偏移，是相对于正常流中该元素位置定位 ，而且偏移前的位置保留不动 。不会影响元素本身的特性，如果没有定位偏移量，对元素没有任何影响。</li>
-<li>无论是相对、绝对还是固定定位，当偏移量超出上面、左边浏览器窗体（或者说超出可视区域）的时候，超出的内容都会被隐藏；而超出下面和右边的时候，相对定位和固定定位会隐藏超出的部分内容，而绝对定位会出现滚动 条。 </li>
-<li>可以使用z-index属性分层放置，z-index越大，说明层次越高，当然它是可以设置负值的。 默认层次，后者高于前者.Z-index 仅能在定位元素上奏效</li>
-<li>相对定位与绝对定位的结合使用：Relative与Absolute组合使用,可以实现一个元素相对于其他元素进行定位，而不是相对于浏览器<br>需要定位的元素的父级元素设置为相对定位，自己本身设置为绝对定位即可</li>
-</ol>
-</li>
-<li><strong> 浮动布局 </strong>：浮动元素会从正常流中取出，浮动到左边或者右边，与绝对定位不同的内联元素会考虑浮动元素的边界，围绕着这个浮动元素 。浮动无法创建两个等高的列。</li>
-<li><strong>表格布局 </strong>：CSS display:table 使用一种类似表格的布局来表现结构中的内容，为页面增加的结构完全是为了支持这种布局，并没有为页面增加任何有含义的内容。经常用来实现多栏均匀布局。利用这种布局很容易实现完美对齐且等高的列，而且可以随着浏览器扩展和收缩。与HTML表格不同，HTML表格的、是建立数据的结构.   （在IE8以前不支持）</li>
-</ul>
+        <h2 id="脚本的下载与执行"><a href="#脚本的下载与执行" class="headerlink" title="脚本的下载与执行"></a>脚本的下载与执行</h2><p>我们知道无论 <code>JavaScript</code> 代码是内嵌形式还是在外链文件形式中，页面的下载和渲染都必须<strong>停</strong>下来等待脚本执行完成，即会出现页面阻塞（页面渲染和用户交互完全被阻塞），然后再继续解析和渲染页面。这是因为脚本可能会改变页面，这意味着它们对出现在脚本后面的页面的内容会造成影响，比如说<code>JavaScript</code>可能会向某个标签添加内容、可能会创建新的元素、可能会移除某个元素等都会对页面内容造成影响。</p>
+<p>而在脚本的执行过程中，用户只能等待，执行过程耗时越久，浏览器等待响应用户输入的时间就越长。</p>
+<h2 id="脚本位置的影响"><a href="#脚本位置的影响" class="headerlink" title="脚本位置的影响"></a>脚本位置的影响</h2><p><code>&lt;script&gt;</code> 标签可以放在 HTML 文档的<code>&lt;head&gt;</code>或<code>&lt;body&gt;</code>中，并允许出现多次。在 <code>&lt;head&gt;</code> 中加载外链的 JavaScript会导致严重的性能问题。<br>上面说到当浏览器解析到 <code>&lt;script&gt;</code> 标签时，浏览器会停止解析其后的内容，而优先下载脚本文件，并执行其中的代码，这意味着，如果 styles.css 样式文件放在<code>&lt;script&gt;</code>的后面，则styles.css 样式文件和<code>&lt;body&gt;</code>标签都无法被加载，由于<code>&lt;body&gt;</code>标签无法被加载，那么页面自然就无法渲染了,因此这将导致在该 JavaScript 代码<strong>完全执行完</strong>之前，页面都是一片空白，用户体验非常不好，一般我看到长时间的空白页面，我都非常想直接关闭它</p>
+<p>注：如果在<code>&lt;head&gt;</code>中有多个<code>JavaScript</code>文件，则它们是并行下载的，不需要等到一个下载执行完才开始下载下一个。但是，虽然如此，只要有脚本在下载在执行就会阻止页面渲染及其他文件的下载</p>
+<p>还有一点要注意，CSS 本来是可以并行下载的，但是当 CSS 后面跟着 JS 的时候，该 CSS 就会出现阻塞后面资源下载的情况。因为JS 代码在执行前，浏览器必须保证在此 JS 执行之前的所有 css（无论外链还是内嵌）都已下载和解析完成。这是 CSS 阻塞后续 JS 执行的根本原因。</p>
+<p>因此会推荐将所有<code>&lt;script&gt;</code>标签尽可能放到<code>&lt;body&gt;</code>标签的底部，以尽量减少对整个页面下载的影响，此时虽然一个脚本会阻塞另一个脚本，但是用户体验比上面的好很多，因为用户看到了大部分内容，而不是空白</p>
+<p>通常如果<code>JavaScript</code>文件有多个的话，应该通过离线的打包工具或者一些实时的在线服务来实现多个文件合并成一个，这样只需要引用一个<code>&lt;script&gt;</code>标签，就可以减少性能消耗<br>这是因为浏览器在解析 HTML 页面的过程中每遇到一个<code>&lt;script&gt;</code>标签，都会因执行脚本而导致一定的延时，所以最小化延迟时间将会明显改善页面的总体性能。而对于外链 JavaScript 文件而言，考虑到 HTTP 请求会带来额外的性能开销，因此下载单个 100Kb 的文件将比下载 5 个 20Kb 的文件更快。所以减少页面中外链脚本的数量将会改善性能。</p>
+<h2 id="实现无阻塞的脚本"><a href="#实现无阻塞的脚本" class="headerlink" title="实现无阻塞的脚本"></a>实现无阻塞的脚本</h2><p>Web 应用的功能越丰富，所需要的 JavaScript 代码就越多，尽管下载单个较大的 JavaScript 文件只产生一次 HTTP 请求，却会锁死浏览器的一大段时间。为避免这种情况，需要通过一些特定的技术向页面中<strong>逐步加载</strong> JavaScript 文件，这样做在某种程度上来说不会阻塞浏览器</p>
 
       
     </div>
@@ -354,9 +329,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTML-CSS/" rel="tag">#HTML/CSS</a>
-          
-            <a href="/tags/布局/" rel="tag">#布局</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -365,12 +338,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/07/仿天猫首页的总结/" rel="next" title="仿天猫首页的总结">
+                <i class="fa fa-chevron-left"></i> 仿天猫首页的总结
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/19/CSS的居中/" rel="prev" title="CSS的居中">
-                CSS的居中 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/23/JS知识点系列-基本类型与引用类型/" rel="prev" title="JS知识点系列--基本类型与引用类型">
+                JS知识点系列--基本类型与引用类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -386,10 +363,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/"
-     data-title="流体 浮动 层模式布局比较"
+        <div class="ds-share flat" data-thread-key="2016/09/21/JS知识点系列-延迟脚本/"
+     data-title="JS知识点系列--延迟脚本"
      data-content=""
-     data-url="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/">
+     data-url="http://Cccshine.github.io/2016/09/21/JS知识点系列-延迟脚本/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -416,8 +393,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/18/流体、浮动、层模式等布局比较/"
-           data-title="流体 浮动 层模式布局比较" data-url="http://Cccshine.github.io/2016/07/18/流体、浮动、层模式等布局比较/">
+      <div class="ds-thread" data-thread-key="2016/09/21/JS知识点系列-延迟脚本/"
+           data-title="JS知识点系列--延迟脚本" data-url="http://Cccshine.github.io/2016/09/21/JS知识点系列-延迟脚本/">
       </div>
     
   </div>
@@ -501,7 +478,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本的下载与执行"><span class="nav-number">1.</span> <span class="nav-text">脚本的下载与执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本位置的影响"><span class="nav-number">2.</span> <span class="nav-text">脚本位置的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现无阻塞的脚本"><span class="nav-number">3.</span> <span class="nav-text">实现无阻塞的脚本</span></a></li></ol></div>
             
           </div>
         </section>
